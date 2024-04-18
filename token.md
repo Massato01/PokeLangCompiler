@@ -15,7 +15,9 @@
 - bool      | disguise   | ^(disguise)$
 - string    | unown      | ^(unown)$
 ```
+
 ---
+
 ### Integer
 ```^(-|\+)?\d+$```
 
@@ -30,7 +32,9 @@
 
 ### Identifiers
 ```^([a-zA-Z])+(\w)*```
+
 ---
+
 ### Operators
 ```
 - +     | plusle    | ^\+$
