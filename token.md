@@ -16,22 +16,22 @@
 - string    | unown      | ^(unown)$
 ```
 
-## Integer
+### Integer
 ```^(-|\+)?\d+$```
 
-## Floating Point
+### Floating Point
 ```^(-|\+)?[0-9]\d.\d+)?$```
 
-## Boolean
+### Boolean
 ```^(True|False|0|1)```
 
-## String
+### String
 ```^"[\s\S]$```
 
-## Identifiers
+### Identifiers
 ```^([a-zA-Z])+(\w)*```
 
-## Operators
+### Operators
 ```
 - +     | plusle    | ^\+$
 - -     | minun     | ^\-$
