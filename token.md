@@ -1,6 +1,6 @@
 # PokeLang
 
-## Keywords
+### Keywords
 ```
 - if        | eevee      | ^(eevee)$
 - elif      | leafeon    | ^(leafeon)$
@@ -15,7 +15,7 @@
 - bool      | disguise   | ^(disguise)$
 - string    | unown      | ^(unown)$
 ```
-
+---
 ### Integer
 ```^(-|\+)?\d+$```
 
@@ -30,8 +30,8 @@
 
 ### Identifiers
 ```^([a-zA-Z])+(\w)*```
-
-## Operators
+---
+### Operators
 ```
 - +     | plusle    | ^\+$
 - -     | minun     | ^\-$
