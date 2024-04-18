@@ -31,7 +31,7 @@
 ### Identifiers
 ```^([a-zA-Z])+(\w)*```
 
-### Operators
+## Operators
 ```
 - +     | plusle    | ^\+$
 - -     | minun     | ^\-$
