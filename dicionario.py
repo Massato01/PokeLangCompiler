@@ -1,7 +1,7 @@
 from enum import Enum
 
 class Token(Enum):
-    # Tipos
+# Tipos
     porygon = 'int'
     porygon2 = 'float'
     porygonZ = 'Double'
@@ -11,18 +11,18 @@ class Token(Enum):
     mimikyu = 'False'
     disguise = 'bool'
 
-    # Condição
+# Condição
     eevee = 'if'
     leafeon = 'elif'
     espeon = 'else'
     pokegym = 'function'
     pokecenter = 'return'
 
-    # Loop
+# Loop
     forretress = 'for'
     poliwhirl = 'while'
 
-    # Operação
+# Operação
     plusle = '+'
     minun = '-'
     dialga = '*'
@@ -34,9 +34,9 @@ class Token(Enum):
     farigiraf = '||'
     spoink = '\n'
 
-    #
+#
     pokeball = 'input'
     pokedex = 'print'
     evolving = 'cast'
 
-    print(dir(Token))
+print(dir(Token))
