@@ -1,5 +1,3 @@
-from itertools import takewhile
-
 class Token:
     def __init__(self, lexema, tipo):
         self.lexema = lexema
@@ -50,7 +48,7 @@ class Lexer:
         return self.tokens
 
 if __name__ == "__main__":
-    data = "1 +32 2-346 * 45/ 5.3"
+    data = "1 +32 2-346 * 45/ 53"
     lexer = Lexer(data)
     tokens = lexer.get_tokens()
 

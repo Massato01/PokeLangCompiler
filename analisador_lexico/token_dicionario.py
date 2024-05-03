@@ -1,6 +1,6 @@
 from enum import Enum
 
-class Token(Enum):
+class TokenDict(Enum):
 # Tipos
     porygon = 'int'
     porygon2 = 'float'
@@ -34,9 +34,11 @@ class Token(Enum):
     farigiraf = '||'
     spoink = '\n'
 
-#
+# Leitura
     pokeball = 'input'
     pokedex = 'print'
     evolving = 'cast'
 
-print(dir(Token))
+
+# print(dir(Token))
+# print(TokenDict.porygon.value)
