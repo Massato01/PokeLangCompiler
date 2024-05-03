@@ -2,6 +2,14 @@
 
 VariableType: porygon | porygon2 | porygonZ | unown | disguise
 
+### Expressões
+
+Expression ⇐ ExpressionVariable | ConditionExpr | WhileDeclaration | PrintDeclaration ;
+
 ### Expressões de Condição
 
-ConditionExpr ⇐ Eevee | EeveeDeclaration , LeafeonDeclaration;
+ConditionExpression: Eevee | Eevee , Leafeon;
+
+### Operadores
+
+Operator: plusle | minun | dialga | palkia | mew | mewtwo | ditto | girafarig | farigiraf | spoink
