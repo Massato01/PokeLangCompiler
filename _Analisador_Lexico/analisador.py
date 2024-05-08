@@ -9,10 +9,10 @@ class Token:
 class Number:
     def evaluate(self, code):
         number = ''
-        decimal_flag = False
-        while code and (code[0].isdigit() or (code[0] == '.' and not decimal_flag)):
+        decimal_encontrado = False
+        while code and (code[0].isdigit() or (code[0] == '.' and not decimal_encontrado)):
             if code[0] == '.':
-                decimal_flag = True
+                decimal_encontrado = True
             number += code.pop(0)
         if number:
             return Token(number, "NUMERO")
