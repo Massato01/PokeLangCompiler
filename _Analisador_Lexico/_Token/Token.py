@@ -24,10 +24,10 @@ class Token:
         return self.__str__()
 
 
-# token1 = Token("NUMBER", 42)
-# token2 = Token("STRING", "Hello, world!")
-# token3 = Token("IDENTIFIER", "variable_name", r"[a-zA-Z_][a-zA-Z0-9_]*")
+token1 = Token("NUMBER", 42)
+token2 = Token("STRING", "Hello, world!")
+token3 = Token("IDENTIFIER", "variable_name", r"[a-zA-Z_][a-zA-Z0-9_]*")
 
-# print(token1)  # Deve imprimir: Token(NUMBER, 42)
-# print(token2)  # Deve imprimir: Token(STRING, 'Hello, world!')
-# print(token3)  # Deve imprimir: Token(IDENTIFIER, 'variable_name')
+print(token1)  # Deve imprimir: Token(NUMBER, 42)
+print(token2)  # Deve imprimir: Token(STRING, 'Hello, world!')
+print(token3)  # Deve imprimir: Token(IDENTIFIER, 'variable_name')
