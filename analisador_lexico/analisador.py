@@ -65,11 +65,10 @@
 
 import re
 from typing import Optional, Match, List, Any
-from analisador_lexico.token.TokenEnum import TokenEnum
+from token.TokenEnum import TokenEnum
 from typing.io import TextIO
-from analisador_lexico.token.TokenArray import TokenArray
-from analisador_lexico.token.Token import Token
-
+from token.TokenArray import TokenArray
+from token.Token import Token
 """
 Check if the words (tokens) are correct
 """

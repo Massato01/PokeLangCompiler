@@ -1,3 +1,7 @@
+'''
+Aqui estão os tokens com seus significados definidos
+'''
+
 from enum import Enum
 
 class TokenEnum(Enum):
@@ -41,4 +45,4 @@ class TokenEnum(Enum):
 
 
 # print(dir(Token))
-# print(TokenDict.porygon.value)
+# print(TokenEnum.porygon.value)

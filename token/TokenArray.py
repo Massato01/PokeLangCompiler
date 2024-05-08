@@ -1,12 +1,16 @@
-from analisador_lexico.token.Token import Token
-from analisador_lexico.token.TokenEnum import TokenEnum
+'''
+Aqui criamos um dicionário com todos os Tokens de pokémons
+'''
+from TokenEnum import TokenEnum
+from Token import Token
 
 
 class TokenArray(object):
     def __init__(self, dict_tokens=None):
-        """ Performs the creation of an object of type TokenArray
+        """
+        Cria um dicionário de Tokens
 
-        :param dict_tokens: Array of tokens
+        :param dict_tokens: Array de Tokens
         """
         if dict_tokens is None:
             dict_tokens = {}
@@ -14,8 +18,8 @@ class TokenArray(object):
         self.add_tokens()
 
     def add_tokens(self):
-        """ Added all tokens in array
-
+        """
+        Adiciona todos os Tokens no dicionário
         """
         self.dict_tokens['porygon'] = Token(TokenEnum.porygon, "porygon", r"^(porygon)$")
         self.dict_tokens['porygon2'] = Token(TokenEnum.porygon2, "porygon2", r"^(porygon2)$")
@@ -43,3 +47,6 @@ class TokenArray(object):
         self.dict_tokens['pokeball'] = Token(TokenEnum.pokeball, "pokeball", r"^(pokeball)$")
         self.dict_tokens['pokedex'] = Token(TokenEnum.pokedex, "pokedex", r"^(pokedex)$")
         self.dict_tokens['evolving'] = Token(TokenEnum.evolving, "evolving", r"^(evolving)$")
+
+# array = TokenArray()
+# print(array.dict_tokens)
