@@ -31,6 +31,22 @@ class Number:
             return Token(number, tipo) # Retorna a string "<{self.lexema}, {self.tipo}>"
         return None
 
+class String:
+    '''
+    Função que verifica se o caracter atual é uma string
+    '''
+    def evaluate(self, code):
+        string = ''
+        while code and code[0].isalpha(): # Loop para strings
+
+            string += code.pop(0) # Remove e pega o primeiro elemento da lista "code"
+
+        if string:
+            tipo = "STRING"
+
+            return Token(string, tipo) # Retorna a string "<{self.lexema}, {self.tipo}>"
+        return None
+
 class MathOperator:
     '''
     Função que verifica se o caracter atual é algum operador listado no dicionário "operators"
@@ -56,7 +72,7 @@ class Lexer:
     def __init__(self, code):
         self.tokens = [] # Lista para retornar os tokens
         self.code = list(code) # Lista para receber os tokens no input
-        self.afds = [Number(), MathOperator()] # AFDs que analisarão os caracteres
+        self.afds = [Number(), MathOperator(), String()] # AFDs que analisarão os caracteres
 
     def skip_white_space(self): # Pula os espaços em branco para não classificar incorretamente
         while self.code and self.code[0].isspace():
@@ -81,7 +97,7 @@ class Lexer:
         return self.tokens # Retorna a lista de tokens
 
 if __name__ == "__main__":
-    data = "1 +32 2-346 * 45 / 5.3"
+    data = "1 +32 CHARLESGOSTOSO 2-346 * 45 / 5.3"
     lexer = Lexer(data)
     tokens = lexer.get_tokens()
 
