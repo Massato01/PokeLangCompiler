@@ -1,5 +1,3 @@
-# from Tokens.TokenEnum import TokenEnum
-from _Token.TokenEnum import TokenEnum
+x = [1, 2, 3]
 
-tok = TokenEnum()
-print(tok)
+print(x.pop(0))

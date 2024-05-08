@@ -1,10 +1,13 @@
 class Token:
+    '''
+    Classe de inicilização dos Tokens
+    '''
     def __init__(self, lexema, tipo):
-        self.lexema = lexema
-        self.tipo = tipo
+        self.lexema = lexema # Elemento de entrada
+        self.tipo = tipo # Tipo do elemento (STR, INT, FLOAT, ...)
 
     def __str__(self):
-        return f"<{self.lexema}, {self.tipo}>"
+        return f"<{self.lexema}, {self.tipo}>" # String de retorno
 
 class Number:
     '''
@@ -13,15 +16,19 @@ class Number:
     def evaluate(self, code):
         number = ''
         decimal_encontrado = False
-        while code and (code[0].isdigit() or (code[0] == '.' and not decimal_encontrado)):
-            if code[0] == '.':
-                decimal_encontrado = True
-            number += code.pop(0)
+        while code and (code[0].isdigit() or (code[0] == '.' and not decimal_encontrado)): # Loop para dígitos númericos(int) ou floats
+
+            if code[0] == '.': # Se for encontrado "." é considerado float
+                decimal_encontrado = True # Ativa a flag de decimal
+
+            number += code.pop(0) # Remove e pega o primeiro elemento da lista "code"
+
         if number:
             tipo = "NUMERO"
             if decimal_encontrado:
                 tipo = "FLUTUANTE"
-            return Token(number, tipo)
+
+            return Token(number, tipo) # Retorna a string "<{self.lexema}, {self.tipo}>"
         return None
 
 class MathOperator:
@@ -29,16 +36,17 @@ class MathOperator:
     Função que verifica se o caracter atual é algum operador listado no dicionário "operators"
     '''
     def evaluate(self, code):
-        operators = {
+        operators = { # Dicionário de operadores matemáticos
             '+': 'SOMA',
             '-': 'SUBTRACAO',
             '*': 'MULTIPLICACAO',
             '/':'DIVISAO'
             }
         
-        if code and code[0] in operators:
-            operator = code.pop(0)
-            return Token(operator, operators[operator])
+        if code and code[0] in operators: # Verifica se o primeiro elemento está no dicionário
+            operator = code.pop(0) # Se estiver, remove e pega ele
+            return Token(operator, operators[operator]) # Retorna a string "<{self.lexema}, {self.tipo}>"
+        
         return None
 
 class Lexer:
