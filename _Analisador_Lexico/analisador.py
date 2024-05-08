@@ -15,7 +15,10 @@ class Number:
                 decimal_encontrado = True
             number += code.pop(0)
         if number:
-            return Token(number, "NUMERO")
+            tipo = "NUMERO"
+            if decimal_encontrado:
+                tipo = "FLUTUANTE"
+            return Token(number, tipo)
         return None
 
 class MathOperator:
