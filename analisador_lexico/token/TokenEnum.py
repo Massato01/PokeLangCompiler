@@ -1,6 +1,6 @@
 from enum import Enum
 
-class TokenDict(Enum):
+class TokenEnum(Enum):
 # Tipos
     porygon = 'int'
     porygon2 = 'float'
