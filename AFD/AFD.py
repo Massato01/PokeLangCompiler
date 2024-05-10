@@ -50,7 +50,20 @@ class MathOperator:
             '+': 'SOMA',
             '-': 'SUBTRACAO',
             '*': 'MULTIPLICACAO',
-            '/':'DIVISAO'
+            '/': 'DIVISAO',
+            '(': 'LPAREN',
+            ')': 'RPAREN',
+            '{': 'LCHAVE',
+            '}': 'RCHAVE',
+            '[': 'LCOLCHETE',
+            ']': 'RCOLCHETE',
+            '>': 'MAIORQUE',
+            '<': 'MENORQUE',
+            '&': 'AND',
+            '|': 'OR',
+            '==': 'ATRIBUICAO',
+            '!=': 'DIFERENTE',
+            '++': 'INCREMENTO'
             }
         
         if code and code[0] in operators: # Verifica se o primeiro elemento está no dicionário

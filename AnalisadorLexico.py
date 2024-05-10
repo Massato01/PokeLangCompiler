@@ -34,7 +34,7 @@ class Lexer:
         return self.tokens # Retorna a lista de tokens
 
 if __name__ == "__main__":
-    data = "1 +32 CHARLESGOSTOSO teste 2-346 * 45 / 5.3"
+    data = "1 +32 CHARLESGOSTOSO teste 2-346 * 45 / 5.3 () { } []"
     lexer = Lexer(data)
     tokens = lexer.get_tokens()
 
