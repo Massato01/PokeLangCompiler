@@ -58,10 +58,40 @@
 - \n    | spoink    | ^\\n$
 ```
 
-### Código
+### Exemplos de código
+
+#### Criação de variáveis
 
 | Código                  | PokeLang               |
 | ----------------------- | ---------------------- |
 | int num = 10;           | porygon num = 10;      |
 | float num = 9.5;        | porygon2 num = 9.5;    |
 | string txt = "pokemon"; | unown txt = "pokemon"; |
+
+#### Operadores
+
+```
+- +     | plusle    | ^\+$
+- -     | minun     | ^\-$
+- *     | dialga    | ^\*$
+- /     | palkia    | ^\/$
+- =     | mew       | ^=$
+- ==    | mewtwo    | ^(==)$
+- &&    | girafarig | ^(&&)$
+- ||    | farigiraf | ^(||)$
+- \n    | spoink    | ^\\n$
+```
+
+#### Loops
+
+```
+# Java
+for (int i = 0; i < x; i++) {
+  system.out.print(i);
+}
+
+# PokeLang
+forretress (porygon i = 0; i < x; i++) {
+    pokedex(i);
+}
+```
