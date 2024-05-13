@@ -1,4 +1,4 @@
-from Token.Token import Token
+from AFD.Token import Token
 
 
 class Number:
@@ -61,7 +61,8 @@ class MathOperator:
             '<': 'MENORQUE',
             '&': 'AND',
             '|': 'OR',
-            '==': 'ATRIBUICAO',
+            '=': "ATRIBUICAO",
+            '==': 'IGUAL',
             '!=': 'DIFERENTE',
             '++': 'INCREMENTO'
             }
@@ -69,5 +70,28 @@ class MathOperator:
         if code and code[0] in operators: # Verifica se o primeiro elemento está no dicionário
             operator = code.pop(0) # Se estiver, remove e pega ele
             return Token(operator, operators[operator]) # Retorna a string "<{self.lexema}, {self.tipo}>"
+        
+        return None
+    
+
+class Reservada:
+    '''
+    Função que verifica se o caracter atual é algum operador listado no dicionário "operators"
+    '''
+    def evaluate(self, code):
+        reservadas = { # Dicionário de palavras reservadas
+            'eevee': 'if',
+            'leafeon': 'elif',
+            'espeon': 'else',
+            'pokegym': 'function',
+            'pokecenter': 'return',
+            '==': 'equals',
+            '=': 'atribuicao',
+            'pokedex': 'PRINT'
+            }
+        
+        if code in reservadas: # Verifica se o primeiro elemento está no dicionário
+            reservada = code # Se estiver, remove e pega ele
+            return Token(reservada, reservadas[reservada]) # Retorna a string "<{self.lexema}, {self.tipo}>"
         
         return None

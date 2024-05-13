@@ -6,5 +6,13 @@ class Token:
         self.lexema = lexema # Elemento de entrada
         self.tipo = tipo # Tipo do elemento (STR, INT, FLOAT, ...)
 
-    def __str__(self):
+    def get_lexema(self):
+        return self.lexema
+    
+    def get_tipo(self):
+        return self.tipo
+
+    def to_string(self):
         return f"<{self.lexema}, {self.tipo}>" # String de retorno
+
+# print('deu certo')

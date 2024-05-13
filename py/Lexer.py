@@ -1,4 +1,4 @@
-from Token.Token import Token
+from AFD.Token import Token
 from AFD.AFD import *
 
 
@@ -9,7 +9,7 @@ class Lexer:
     def __init__(self, code):
         self.tokens = [] # Lista para retornar os tokens
         self.code = list(code) # Lista para receber os tokens no input
-        self.afds = [Number(), MathOperator(), String()] # AFDs que analisarão os caracteres
+        self.afds = [Number(), MathOperator(), String(), Reservada()] # AFDs que analisarão os caracteres
 
     def skip_white_space(self): # Pula os espaços em branco para não classificar incorretamente
         while self.code and self.code[0].isspace():
@@ -34,7 +34,7 @@ class Lexer:
         return self.tokens # Retorna a lista de tokens
 
 if __name__ == "__main__":
-    data = "1 +32 CHARLESGOSTOSO teste 2-346 * 45 / 5.3 () { } []"
+    data = "eevee x == 10 pokedex(x)"
     lexer = Lexer(data)
     tokens = lexer.get_tokens()
 
