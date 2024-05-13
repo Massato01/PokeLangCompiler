@@ -65,7 +65,7 @@
 - int
 
 ```
-# Java
+# Original
 int num = 10;
 
 # PokelLang
@@ -75,7 +75,7 @@ porygon num = 10;
 - float
 
 ```
-# Java
+# Original
 float num = 9.5;
 
 # PokeLang
@@ -85,7 +85,7 @@ porygon2 num = 9.5;
 - string
 
 ```
-# Java
+# Original
 string txt = "pokemon";
 
 # PokeLang
@@ -111,7 +111,7 @@ unown txt = "pokemon";
 - for
 
 ```
-# Java
+# Original
 for (int i = 0; i < x; i++) {
   system.out.print(i);
 }
@@ -123,3 +123,17 @@ forretress (porygon i = 0; i < x; i++) {
 ```
 
 - while
+
+```
+# Original
+while (x <= 5) {
+    System.out.print(x);
+    contador++;
+}
+
+# PokeLang
+poliwhirl (x <= 5) {
+    pokedex(x);
+    x++;
+}
+```
