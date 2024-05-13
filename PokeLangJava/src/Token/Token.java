@@ -1,4 +1,4 @@
-package Lexer;
+package Token;
 
 public class Token {
     private String lexema;

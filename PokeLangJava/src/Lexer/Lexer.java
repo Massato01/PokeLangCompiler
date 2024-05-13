@@ -5,6 +5,15 @@ import java.text.StringCharacterIterator;
 import java.util.ArrayList;
 import java.util.List;
 
+import Token.Token;
+import AFD.AFD;
+import AFD.Comment;
+import AFD.ID;
+import AFD.MathOperator;
+import AFD.Number;
+import AFD.Reservada;
+import AFD.StringText;
+
 public class Lexer {
   private List<Token> tokens;
   private List<AFD> afds;

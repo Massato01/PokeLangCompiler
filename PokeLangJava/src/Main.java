@@ -4,15 +4,16 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import Lexer.Token;
+import Token.Token;
 import Lexer.Lexer;
-import Sintatico.Parser;
+// import Sintatico.Parser;
 
 public class Main {
   public static void main(String[] args) throws IOException {
     List<Token> tokens = null;
 
-    String codigoFonte = new Main().Arquivo();
+    // String codigoFonte = new Main().Arquivo();
+    String codigoFonte = "porygon x = 1;";
 
     Lexer lexer = new Lexer(codigoFonte);
     tokens = lexer.getTokens();

@@ -1,6 +1,7 @@
-package Lexer;
+package AFD;
 
 import java.text.CharacterIterator;
+import Token.Token;
 
 public class Reservada extends AFD {
 	String reservadas[] = { "eevee", "espeon", "forretress", "poliwhirl", "porygon", "squirtle", "unown", "pokeball", "pokedex", "ditto" };

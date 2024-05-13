@@ -1,6 +1,7 @@
-package Lexer;
+package AFD;
 
 import java.text.CharacterIterator;
+import Token.Token;
 
 public class MathOperator extends AFD {
     @Override
