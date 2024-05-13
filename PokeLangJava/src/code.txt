@@ -1,15 +1,11 @@
-porygon x = 1;
-porygon y = 32;
+porygon x = 5;
+porygon y = 10;
 
+// IF
 eevee(x > 2) {
-	x++;
-	y--;
+	x = y / 2;
+	y = x * 2;
 } espeon {
-		x = 2 / 2;
-	} // comentario
-
-var = 10;
-soma = 10 + 10;
-squirtle z = 10.5;
-
-unown str = "string";
+	x = 0;
+	y = 0;
+	}

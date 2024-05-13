@@ -78,7 +78,7 @@ public class Parser {
     return false;
   }
 
-  // --------------------Atribuição Variavel--------------------
+  // ATRIBUIÇÃO
   private boolean atribVariavel() {
     if (tipoVariavel() && variavel() && matchL("=", "=") && (variavel() || expressao()) && matchL(";", ";")) {
       return true;
@@ -88,7 +88,7 @@ public class Parser {
     return false;
   }
 
-  // --------------------Comentário--------------------
+  // COMENTÁRIO
   private boolean comentario() {
     if (matchT("COMENTARIO", token.getLexema().replace("#", "//") + "\n")) {
       return true;
@@ -98,7 +98,7 @@ public class Parser {
     return false;
   }
 
-  // --------------------Depende--------------------
+  // IF
   private boolean eevee() {
     if (matchL("eevee", "if") && matchL("(", "(") && condicao() && matchL(")", ")") && matchL("{", "{") && expressao()
         && matchL("}", "}")
@@ -122,7 +122,7 @@ public class Parser {
     return true; // ε
   }
 
-  // --------------------EOSeuNegocio--------------------
+  // FOR
   private boolean forretress() {
     if (matchL("forretress", "for") && matchL("(", "(") && varContador()
         && matchL(";", ";") && condicao() && matchL(";", ";") && incremento() && matchL(")", ")") && matchL("{", "{")
@@ -135,7 +135,7 @@ public class Parser {
     return false;
   }
 
-  // --------------------FazDeNovo--------------------
+  // WHILE
   private boolean poliwhirl() {
     if (matchL("poliwhirl", "while") && matchL("(", "(") && condicao() && matchL(")", ")") && matchL("{", "{")
         && expressao() && matchL("}", "}")) {
@@ -146,7 +146,7 @@ public class Parser {
     return false;
   }
 
-  // --------------------OlhaSo--------------------
+  // PRINT
   private boolean pokedex() {
     if (matchL("pokedex", "System.out.println") && matchL("(", "(") && variavel() && matchL(")", ")")
         && matchL(";", ";")) {
@@ -157,7 +157,7 @@ public class Parser {
     return false;
   }
 
-  // --------------------Funcoes intermediarias--------------------
+  // TESTANDO
   private boolean tipoVariavel() {
     if (matchL("porygon", "int ") || matchL("squirtle", "double ") || matchL("unown", "String ")) {
       return true;
@@ -310,7 +310,7 @@ public class Parser {
     return false;
   }
 
-  // --------------------Verificacao Dados--------------------
+  // TIPO DE VARIÁVEL
   private boolean matchLFirst(String lexema) {
     if (token.getLexema().equals(lexema)) {
       return true;

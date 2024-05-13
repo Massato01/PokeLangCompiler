@@ -1,14 +1,11 @@
 ## Tipos:
 
 - int -> porygon
-- float -> porygon2
-- double -> porygonZ
-- string -> unown (já tem o char)
-<!-- * char     -> charizard -->
+- double -> squirtle
+- string -> unown
 - true -> pikachu
 - false -> mimikyu
 - bool -> disguise
-- static -> ???
 
 ---
 
