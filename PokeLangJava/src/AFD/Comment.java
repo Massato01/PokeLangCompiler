@@ -7,34 +7,26 @@ public class Comment extends AFD {
 
     @Override
     public Token evaluate(CharacterIterator code) {
-        String comment = "";
-
-        if (code.current() == '#') {
-            comment += "#";
+        if (code.current() == '/') {
             code.next();
+            if (code.current() == '/') {
+                code.next();
 
-            comment += readComment(code);
+                String comment = readComment(code);
 
-            if (endComment(code)) {
                 return new Token("COMENTARIO", comment);
             }
         }
-
         return null;
     }
 
     private String readComment(CharacterIterator code) {
-        String comment = "";
+        String comment = "//";
 
-        while (code.current() != '\r' && code.current() != '\n' && code.current() != CharacterIterator.DONE) {
+        while (code.current() != '\n' && code.current() != CharacterIterator.DONE) {
             comment += code.current();
             code.next();
         }
-
         return comment;
-    }
-
-    private boolean endComment(CharacterIterator code) {
-        return code.current() == '\r' || code.current() == '\n' || code.current() == CharacterIterator.DONE;
     }
 }

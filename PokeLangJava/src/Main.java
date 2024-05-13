@@ -13,7 +13,8 @@ public class Main {
     List<Token> tokens = null;
 
     // String codigoFonte = new Main().Arquivo();
-    String codigoFonte = "porygon x = 1;\nporygon y = 32;\neevee(x > 2) {\nx = 1;\n} espeon {\nx = 2;\n} # comentario";
+    String codigoFonte = "porygon x = 1;\nporygon y = 32;\neevee(x > 2) {\nx = 1;\n} espeon {\nx = 2 / 2;\n} // comentario";
+    // String codigoFonte = "// comentario";
     /*
       porygon x = 1;
       porygon y = 32;
