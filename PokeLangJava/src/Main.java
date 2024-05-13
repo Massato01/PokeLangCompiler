@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 import Token.Token;
 import Lexer.Lexer;
-import Syntactic.Parser;
+// import Syntactic.Parser;
 
 public class Main {
   public static void main(String[] args) throws IOException {
@@ -19,12 +19,12 @@ public class Main {
     tokens = lexer.getTokens();
 
     // PRINTA OS TOKENS
-    // for (Token token : tokens) {
-    //   System.out.println(token);
-    // }
+    for (Token token : tokens) {
+      System.out.println(token);
+    }
 
-    Parser parser = new Parser(tokens);
-    parser.main();
+    // Parser parser = new Parser(tokens);
+    // parser.main();
   }
 
   public String Arquivo() throws IOException {

@@ -10,6 +10,7 @@ public class Parser {
   }
 
   public Tree main() {
+    System.out.println("public class Main {\n\tpublic static void main(String[] args) {");
     Node node = new Node("ifelse");
     Tree tree = new Tree(node);
 
