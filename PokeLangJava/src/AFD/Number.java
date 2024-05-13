@@ -1,6 +1,8 @@
 package AFD;
 
 import java.text.CharacterIterator;
+import java.util.Arrays;
+import java.util.List;
 import Token.Token;
 
 public class Number extends AFD {
@@ -8,28 +10,24 @@ public class Number extends AFD {
 	public Token evaluate(CharacterIterator code) {
 		String number;
 
-		if (Character.isDigit(code.current())) {
+		if (Character.isDigit(code.current())) { // Se for um digito, chamará a função readNumber
 			number = readNumber(code);
 
-			if (endNumber(code)) {
+			if (endNumber(code) == true) { // Se a entrada for finalizada retorna o Token de NUM
 				return new Token("NUM", number);
 			}
-
-			if (code.current() == '.') {
-				number += '.';
-				code.next();
-				number += readNumber(code);
-
-				if (endNumber(code)) {
-					return new Token("FLUTUANTE", number);
-				}
+			code.next();
+			number += '.'; // Se for um FLOAT, chamará a função readNumber adicionando o "."
+			number += readNumber(code);
+			if (endNumber(code) == true) {
+				return new Token("FLUTUANTE", number);
 			}
 		}
 
 		return null;
 	}
 
-	private String readNumber(CharacterIterator code) {
+	private String readNumber(CharacterIterator code) { // Lê a entrada e verifica se é um número, se for, incrementa em "number"
 		String number = "";
 
 		while (Character.isDigit(code.current())) {
@@ -40,19 +38,14 @@ public class Number extends AFD {
 		return number;
 	}
 
-	private boolean endNumber(CharacterIterator code) {
-		return code.current() == ' '
-				|| code.current() == '+'
-				|| code.current() == '-'
-				|| code.current() == '*'
-				|| code.current() == '('
-				|| code.current() == ')'
-				|| code.current() == '{'
-				|| code.current() == '}'
-				|| code.current() == '['
-				|| code.current() == ']'
-				|| code.current() == ';'
-				|| code.current() == '\n'
-				|| code.current() == CharacterIterator.DONE;
+	private boolean endNumber(CharacterIterator code) { // Verifica se finalizou a declaração do ID
+		List<Character> finalizadores = Arrays.asList(' ', '+', '-', '*', '/', '(', ')', '{', '}', '[', ']', ';', '\n' , CharacterIterator.DONE);
+
+		for (char finalizador : finalizadores) {
+			if (code.current() == finalizador) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

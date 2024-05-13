@@ -7,9 +7,24 @@ public class MathOperator extends AFD {
     @Override
     public Token evaluate(CharacterIterator code) {
         switch (code.current()) {
+            case '+':
+                code.next();
+                if (code.current() == '+') {
+                    code.next();
+                    return new Token("INCREMENTO", "++");
+                } else {
+                    code.next();
+                    return new Token("SOMA", "+");
+                }
             case '-':
                 code.next();
-                return new Token("SUB", "-");
+                if (code.current() == '-') {
+                    code.next();
+                    return new Token("DECREMENTO", "--");
+                } else {
+                    code.next();
+                    return new Token("SUB", "-");
+                }
             case '*':
                 code.next();
                 return new Token("MUL", "*");
@@ -22,15 +37,15 @@ public class MathOperator extends AFD {
             case ')':
                 code.next();
                 return new Token("RPAREN", ")");
-            case '{':
-                code.next();
-                return new Token("LCHAVE", "{");
             case '[':
                 code.next();
                 return new Token("LCOLCHETE", "[");
             case ']':
                 code.next();
-                return new Token("rCOLCHETE", "]");
+                return new Token("RCOLCHETE", "]");
+            case '{':
+                code.next();
+                return new Token("LCHAVE", "{");
             case '}':
                 code.next();
                 return new Token("RCHAVE", "}");
@@ -39,10 +54,10 @@ public class MathOperator extends AFD {
                 return new Token("FIM", ";");
             case '>':
                 code.next();
-                return new Token("MAIORQ", ">");
+                return new Token("MAIORQUE", ">");
             case '<':
                 code.next();
-                return new Token("MENORQ", "<");
+                return new Token("MENORQUE", "<");
             case '&':
                 code.next();
                 if (code.current() == '&') {
@@ -53,7 +68,7 @@ public class MathOperator extends AFD {
                 code.next();
                 if (code.current() == '|') {
                     code.next();
-                    return new Token("AND", "||");
+                    return new Token("OR", "||");
                 }
             case '=':
                 code.next();
@@ -68,14 +83,6 @@ public class MathOperator extends AFD {
                 if (code.current() == '=') {
                     code.next();
                     return new Token("DIFERENTE", "!=");
-                }
-            case '+':
-                code.next();
-                if (code.current() == '+') {
-                    code.next();
-                    return new Token("INCREMENTO_SOMA", "++");
-                } else {
-                    return new Token("SOMA", "+");
                 }
             default:
                 return null;
