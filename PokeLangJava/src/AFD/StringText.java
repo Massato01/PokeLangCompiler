@@ -5,7 +5,7 @@ import Token.Token;
 
 public class StringText extends AFD {
   @Override
-  public Token evaluate(CharacterIterator code, int line, int column) {
+  public Token evaluate(CharacterIterator code) {
     String stringText = "";
 
     if (code.current() == '"') {
@@ -16,7 +16,7 @@ public class StringText extends AFD {
       if (endString(code)) {
         stringText += '"';
         code.next();
-        return new Token("STRING", stringText, line, column);
+        return new Token("STRING", stringText);
       }
     }
 

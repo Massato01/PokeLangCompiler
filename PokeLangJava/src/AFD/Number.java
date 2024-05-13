@@ -5,14 +5,14 @@ import Token.Token;
 
 public class Number extends AFD {
 	@Override
-	public Token evaluate(CharacterIterator code, int linha, int column) {
+	public Token evaluate(CharacterIterator code) {
 		String number;
 
 		if (Character.isDigit(code.current())) {
 			number = readNumber(code);
 
 			if (endNumber(code)) {
-				return new Token("NUM", number, linha, column);
+				return new Token("NUM", number);
 			}
 
 			if (code.current() == '.') {
@@ -21,7 +21,7 @@ public class Number extends AFD {
 				number += readNumber(code);
 
 				if (endNumber(code)) {
-					return new Token("FLUTUANTE", number, linha, column);
+					return new Token("FLUTUANTE", number);
 				}
 			}
 		}

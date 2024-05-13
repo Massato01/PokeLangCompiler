@@ -5,12 +5,12 @@ import Token.Token;
 
 public class ID extends AFD {
     @Override
-    public Token evaluate(CharacterIterator code, int line, int column) {
+    public Token evaluate(CharacterIterator code) {
         if (Character.isLetter(code.current())) {
             String number = readID(code);
 
             if (endID(code)) {
-                return new Token("ID", number, line, column);
+                return new Token("ID", number);
             }
         }
 

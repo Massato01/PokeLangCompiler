@@ -5,77 +5,77 @@ import Token.Token;
 
 public class MathOperator extends AFD {
     @Override
-    public Token evaluate(CharacterIterator code, int linha, int column) {
+    public Token evaluate(CharacterIterator code) {
         switch (code.current()) {
             case '-':
                 code.next();
-                return new Token("SUB", "-", linha, column);
+                return new Token("SUB", "-");
             case '*':
                 code.next();
-                return new Token("MUL", "*", linha, column);
+                return new Token("MUL", "*");
             case '/':
                 code.next();
-                return new Token("DIV", "/", linha, column);
+                return new Token("DIV", "/");
             case '(':
                 code.next();
-                return new Token("LPAREN", "(", linha, column);
+                return new Token("LPAREN", "(");
             case ')':
                 code.next();
-                return new Token("RPAREN", ")", linha, column);
+                return new Token("RPAREN", ")");
             case '{':
                 code.next();
-                return new Token("LCHAVE", "{", linha, column);
+                return new Token("LCHAVE", "{");
             case '[':
                 code.next();
-                return new Token("LCOLCHETE", "[", linha, column);
+                return new Token("LCOLCHETE", "[");
             case ']':
                 code.next();
-                return new Token("rCOLCHETE", "]", linha, column);
+                return new Token("rCOLCHETE", "]");
             case '}':
                 code.next();
-                return new Token("RCHAVE", "}", linha, column);
+                return new Token("RCHAVE", "}");
             case ';':
                 code.next();
-                return new Token("FIM", ";", linha, column);
+                return new Token("FIM", ";");
             case '>':
                 code.next();
-                return new Token("MAIORQ", ">", linha, column);
+                return new Token("MAIORQ", ">");
             case '<':
                 code.next();
-                return new Token("MENORQ", "<", linha, column);
+                return new Token("MENORQ", "<");
             case '&':
                 code.next();
                 if (code.current() == '&') {
                     code.current();
-                    return new Token("AND", "&&", linha, column);
+                    return new Token("AND", "&&");
                 }
             case '|':
                 code.next();
                 if (code.current() == '|') {
                     code.next();
-                    return new Token("AND", "||", linha, column);
+                    return new Token("AND", "||");
                 }
             case '=':
                 code.next();
                 if (code.current() == '=') {
                     code.next();
-                    return new Token("IGUAL", "==", linha, column);
+                    return new Token("IGUAL", "==");
                 } else {
-                    return new Token("ATRIBUICAO", "=", linha, column);
+                    return new Token("ATRIBUICAO", "=");
                 }
             case '!':
                 code.next();
                 if (code.current() == '=') {
                     code.next();
-                    return new Token("DIFERENTE", "!=", linha, column);
+                    return new Token("DIFERENTE", "!=");
                 }
             case '+':
                 code.next();
                 if (code.current() == '+') {
                     code.next();
-                    return new Token("INCREMENTO_SOMA", "++", linha, column);
+                    return new Token("INCREMENTO_SOMA", "++");
                 } else {
-                    return new Token("SOMA", "+", linha, column);
+                    return new Token("SOMA", "+");
                 }
             default:
                 return null;

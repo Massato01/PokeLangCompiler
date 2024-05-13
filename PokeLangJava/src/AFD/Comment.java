@@ -6,7 +6,7 @@ import Token.Token;
 public class Comment extends AFD {
 
     @Override
-    public Token evaluate(CharacterIterator code, int line, int column) {
+    public Token evaluate(CharacterIterator code) {
         String comment = "";
 
         if (code.current() == '#') {
@@ -16,7 +16,7 @@ public class Comment extends AFD {
             comment += readComment(code);
 
             if (endComment(code)) {
-                return new Token("COMENTARIO", comment, line, column);
+                return new Token("COMENTARIO", comment);
             }
         }
 
