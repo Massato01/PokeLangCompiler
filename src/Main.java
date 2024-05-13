@@ -9,10 +9,10 @@ import Lexer.Lexer;
 // import Syntactic.Parser;
 
 public class Main {
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
     List<Token> tokens = null;
 
-    String codigoFonte = new Main().Arquivo();
+    String codigoFonte = new Main().Code();
     // String codigoFonte = "porygon x = 1;\nporygon y = 32;\neevee(x > 2) {\nx++;\ny--;\n} espeon {\nx = 2 / 2;\n} // comentario\nvar = 10\nsoma = 10 + 10\nsquirtle z = 10.5;";
 
     Lexer lexer = new Lexer(codigoFonte);
@@ -27,9 +27,13 @@ public class Main {
     // parser.main();
   }
 
-  public String Arquivo() throws IOException {
-    String data = new String(
-        Files.readAllBytes(Paths.get("PokeLangJava\\src\\code.txt")), StandardCharsets.UTF_8);
-    return data;
+  public String Code() {
+    try {
+        String code = new String(Files.readAllBytes(Paths.get("src\\code.txt")), StandardCharsets.UTF_8);
+        return code;
+    } catch (IOException e) {
+        e.printStackTrace();
+        return null;
+    }
   }
 }
