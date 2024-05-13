@@ -1,0 +1,16 @@
+porygon x = 1;
+porygon y = 32;
+
+eevee (x > 2) {
+	x = 1;
+} espeon {
+	x = 2;
+}
+
+forretress (porygon i = 1; 1 < 10; i++) {
+	pokedex(i);
+}
+
+poliwhirl (x < 5) {
+	squirtle(x);
+}

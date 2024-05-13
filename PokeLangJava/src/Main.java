@@ -29,7 +29,7 @@ public class Main {
 
   public String Arquivo() throws IOException {
     String data = new String(
-        Files.readAllBytes(Paths.get("src\\validacao.txt")), StandardCharsets.UTF_8);
+        Files.readAllBytes(Paths.get("PokeLangJava\\src\\validacao.txt")), StandardCharsets.UTF_8);
     return data;
   }
 }
