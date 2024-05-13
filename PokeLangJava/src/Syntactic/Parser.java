@@ -11,17 +11,18 @@ public class Parser {
 
   public Tree main() {
     System.out.println("public class Main {\n\tpublic static void main(String[] args) {");
+    
     Node node = new Node("ifelse");
     Tree tree = new Tree(node);
 
     token = getNextToken();
     if(ifelse(node)){
       if (token.tipo == "EOF"){
-        System.out.println("\nSintaticamente correta");
+        System.out.println("\t}\n}");
         return tree;
       }
       else{
-        erro("main");
+        erro("ERRO!");
       }
     }
     erro("main");

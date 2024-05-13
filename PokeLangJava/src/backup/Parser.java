@@ -32,7 +32,7 @@ public class Parser {
 
     if (firstToken()) {
       if (matchT("EOF", "")) {
-        System.out.println("}}");
+        System.out.println("\t}\n}");
       } else {
         erro("ERRO!");
       }
