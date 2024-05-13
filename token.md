@@ -1,41 +1,53 @@
 # PokeLang
 
 ### Keywords
+
 ```
-- if        | eevee      | ^(eevee)$
-- elif      | leafeon    | ^(leafeon)$
-- else      | espeon     | ^(espeon)$
-- for       | forretress | ^(forretress)$
-- while     | poliwhirl  | ^(poliwhirl)$
-- functions | pokegym    | ^(pokegym)$
-- return    | pokecenter | ^(pokecenter)$
-- print     | pokedex    | ^(pokedex)$
-- int       | porygon    | ^(porygon)$
-- float     | porygon2   | ^(porygon2)$
-- bool      | disguise   | ^(disguise)$
-- string    | unown      | ^(unown)$
+| Comando | PokeLang |
+-----------------------
+| if        | eevee |
+| elif      | leafeon |
+| else      | espeon |
+| for       | forretress |
+| while     | poliwhirl |
+| functions | pokegym |
+| return    | pokecenter |
+| print     | pokedex |
+| int       | porygon |
+| float     | porygon2 |
+| bool      | disguise |
+| string    | unown |
+| entrada de dados | ??? |
+| saida de dados | ??? |
+| break | ??? |
 ```
 
 ---
 
 ### Integer
-```^(-|\+)?\d+$```
+
+`^(-|\+)?\d+$`
 
 ### Floating Point
-```^(-|\+)?[0-9]\d.\d+)?$```
+
+`^(-|\+)?[0-9]\d.\d+)?$`
 
 ### Boolean
-```^(True|False|0|1)```
+
+`^(True|False|0|1)`
 
 ### String
-```^"[\s\S]$```
+
+`^"[\s\S]$`
 
 ### Identifiers
-```^([a-zA-Z])+(\w)*```
+
+`^([a-zA-Z])+(\w)*`
 
 ---
 
 ### Operators
+
 ```
 - +     | plusle    | ^\+$
 - -     | minun     | ^\-$
