@@ -62,11 +62,35 @@
 
 #### Criação de variáveis
 
-| Código                  | PokeLang               |
-| ----------------------- | ---------------------- |
-| int num = 10;           | porygon num = 10;      |
-| float num = 9.5;        | porygon2 num = 9.5;    |
-| string txt = "pokemon"; | unown txt = "pokemon"; |
+- int
+
+```
+# Java
+int num = 10;
+
+# PokelLang
+porygon num = 10;
+```
+
+- float
+
+```
+# Java
+float num = 9.5;
+
+# PokeLang
+porygon2 num = 9.5;
+```
+
+- string
+
+```
+# Java
+string txt = "pokemon";
+
+# PokeLang
+unown txt = "pokemon";
+```
 
 #### Operadores
 
@@ -84,6 +108,8 @@
 
 #### Loops
 
+- for
+
 ```
 # Java
 for (int i = 0; i < x; i++) {
@@ -95,3 +121,5 @@ forretress (porygon i = 0; i < x; i++) {
     pokedex(i);
 }
 ```
+
+- while
