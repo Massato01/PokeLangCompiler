@@ -57,3 +57,13 @@
 - ||    | farigiraf | ^(||)$
 - \n    | spoink    | ^\\n$
 ```
+
+### Código
+
+```
+|Código                   | PokeLang               |
+|-------------------------|------------------------|
+| int num = 10;           | porygon num = 10;      |
+| float num = 9.5;        | porygon2 num = 9.5;    |
+| string txt = "pokemon"; | unown txt = "pokemon"; |
+```
