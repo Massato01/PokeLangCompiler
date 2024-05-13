@@ -2,25 +2,23 @@
 
 ### Keywords
 
-```
-| Comando | PokeLang |
------------------------
-| if        | eevee |
-| elif      | leafeon |
-| else      | espeon |
-| for       | forretress |
-| while     | poliwhirl |
-| functions | pokegym |
-| return    | pokecenter |
-| print     | pokedex |
-| int       | porygon |
-| float     | porygon2 |
-| bool      | disguise |
-| string    | unown |
-| entrada de dados | ??? |
-| saida de dados | ??? |
-| break | ??? |
-```
+| Comando          | PokeLang   |
+| ---------------- | ---------- |
+| if               | eevee      |
+| elif             | leafeon    |
+| else             | espeon     |
+| for              | forretress |
+| while            | poliwhirl  |
+| functions        | pokegym    |
+| return           | pokecenter |
+| print            | pokedex    |
+| int              | porygon    |
+| float            | porygon2   |
+| bool             | disguise   |
+| string           | unown      |
+| entrada de dados | ???        |
+| saida de dados   | ???        |
+| break            | ???        |
 
 ---
 
