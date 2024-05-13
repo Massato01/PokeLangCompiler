@@ -27,7 +27,7 @@ public class Parser {
   }
 
   public void main() {
-    System.out.println("public class Main { public static void main(String[] args) {");
+    System.out.println("public class Main {\npublic static void main(String[] args) {\n");
     token = nextToken();
 
     if (firstToken()) {
