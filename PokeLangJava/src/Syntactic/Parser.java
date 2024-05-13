@@ -44,11 +44,11 @@ public class Parser {
 
   private boolean ifelse(Node node) {
     if (
-      matchL("se","if", node) && 
+      matchLexema("se","if", node) && 
       condicao(node.addChild("condicao")) && 
-      matchL("entao","", node) && 
+      matchLexema("entao","", node) && 
       expressao(node.addChild("expressao")) && 
-      matchL("senao","else", node) && 
+      matchLexema("senao","else", node) && 
       expressao(node.addChild("expressao"))
       ){
       return true;
@@ -74,9 +74,9 @@ public class Parser {
 
   private boolean operador(Node node) {
     if (
-    matchL(">",">", node) || 
-    matchL("<", "<", node) || 
-    matchL("==", "==", node)
+    matchLexema(">",">", node) || 
+    matchLexema("<", "<", node) || 
+    matchLexema("==", "==", node)
     ){
       return true;
     }
@@ -100,7 +100,7 @@ public class Parser {
   }
 
   private boolean operadorAtribuicao(Node node) {
-    if(matchL("=", token.lexema, node)){
+    if(matchLexema("=", token.lexema, node)){
       return true;
     }
     erro("operadorAtribuicao");
@@ -108,7 +108,7 @@ public class Parser {
   }
 
   private boolean var(Node node) {
-    if (matchT("id", token.lexema, node)){
+    if (matchTipo("id", token.lexema, node)){
       return true;
     }
     erro("var");
@@ -116,14 +116,14 @@ public class Parser {
   }
 
   private boolean num(Node node) {
-    if(matchT("num", token.lexema, node)){
+    if(matchTipo("num", token.lexema, node)){
       return true;
     }
     erro("num");
     return false;
   }
 
-  private boolean matchL(String palavra, String newcode, Node node){
+  private boolean matchLexema(String palavra, String newcode, Node node){
     if (token.lexema.equals(palavra)){
       node.addChild(newcode);
       token = getNextToken();
@@ -133,7 +133,7 @@ public class Parser {
     return false;
   }
 
-  private boolean matchT(String palavra, String newcode, Node node){
+  private boolean matchTipo(String palavra, String newcode, Node node){
     if (token.tipo.equals(palavra)){
       node.addChild(newcode);
       token = getNextToken();
