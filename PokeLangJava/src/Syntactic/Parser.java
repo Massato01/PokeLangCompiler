@@ -1,8 +1,8 @@
-package Sintatico;
+package Syntactic;
 
 import java.util.List;
 
-import Lexer.Token;
+import Token.Token;
 
 public class Parser {
   List<Token> tokens;
@@ -50,23 +50,23 @@ public class Parser {
         firstToken();
         return true;
       }
-    } else if (matchLFirst("depende")) {
-      if (depende()) {
+    } else if (matchLFirst("eevee")) {
+      if (eevee()) {
         firstToken();
         return true;
       }
-    } else if (matchLFirst("eOSeuNegocio")) {
-      if (eOSeuNegocio()) {
+    } else if (matchLFirst("forretress")) {
+      if (forretress()) {
         firstToken();
         return true;
       }
-    } else if (matchLFirst("fazDeNovo")) {
-      if (fazDeNovo()) {
+    } else if (matchLFirst("poliwhirl")) {
+      if (poliwhirl()) {
         firstToken();
         return true;
       }
-    } else if (matchLFirst("olhaSo")) {
-      if (olhaSo()) {
+    } else if (matchLFirst("pokedex")) {
+      if (pokedex()) {
         firstToken();
         return true;
       }
@@ -99,23 +99,23 @@ public class Parser {
   }
 
   // --------------------Depende--------------------
-  private boolean depende() {
-    if (matchL("depende", "if") && matchL("(", "(") && condicao() && matchL(")", ")") && matchL("{", "{") && expressao()
+  private boolean eevee() {
+    if (matchL("eevee", "if") && matchL("(", "(") && condicao() && matchL(")", ")") && matchL("{", "{") && expressao()
         && matchL("}", "}")
-        && planoB()) {
+        && espeon()) {
       return true;
     }
 
-    erro("Depende invalido: " + token);
+    erro("eevee invalido: " + token);
     return false;
   }
 
-  private boolean planoB() {
-    if (matchL("planoB", "else")) {
+  private boolean espeon() {
+    if (matchL("espeon", "else")) {
       if (matchL("{", "{") && expressao() && matchL("}", "}")) {
         return true;
       }
-      erro("PlanoB invalido: " + token);
+      erro("espeon invalido: " + token);
       return false;
     }
 
@@ -123,43 +123,43 @@ public class Parser {
   }
 
   // --------------------EOSeuNegocio--------------------
-  private boolean eOSeuNegocio() {
-    if (matchL("eOSeuNegocio", "for") && matchL("(", "(") && varContador()
+  private boolean forretress() {
+    if (matchL("forretress", "for") && matchL("(", "(") && varContador()
         && matchL(";", ";") && condicao() && matchL(";", ";") && incremento() && matchL(")", ")") && matchL("{", "{")
         && expressao()
         && matchL("}", "}")) {
       return true;
     }
 
-    erro("EOSeuNegocio invalido: " + token);
+    erro("forretress invalido: " + token);
     return false;
   }
 
   // --------------------FazDeNovo--------------------
-  private boolean fazDeNovo() {
-    if (matchL("fazDeNovo", "while") && matchL("(", "(") && condicao() && matchL(")", ")") && matchL("{", "{")
+  private boolean poliwhirl() {
+    if (matchL("poliwhirl", "while") && matchL("(", "(") && condicao() && matchL(")", ")") && matchL("{", "{")
         && expressao() && matchL("}", "}")) {
       return true;
     }
 
-    erro("FazDeNovo invalido: " + token);
+    erro("poliwhirl invalido: " + token);
     return false;
   }
 
   // --------------------OlhaSo--------------------
-  private boolean olhaSo() {
-    if (matchL("olhaSo", "System.out.println") && matchL("(", "(") && variavel() && matchL(")", ")")
+  private boolean pokedex() {
+    if (matchL("pokedex", "System.out.println") && matchL("(", "(") && variavel() && matchL(")", ")")
         && matchL(";", ";")) {
       return true;
     }
 
-    erro("OlhaSo invalido: " + token);
+    erro("pokedex invalido: " + token);
     return false;
   }
 
   // --------------------Funcoes intermediarias--------------------
   private boolean tipoVariavel() {
-    if (matchL("taOk", "int ") || matchL("gaviao", "double ") || matchL("caixaPreta", "String ")) {
+    if (matchL("porygon", "int ") || matchL("squirtle", "double ") || matchL("unown", "String ")) {
       return true;
     }
 
@@ -179,8 +179,8 @@ public class Parser {
   }
 
   private boolean tipoVariavelFirst() {
-    if (matchLFirst("taOk") || matchLFirst("gaviao") ||
-        matchLFirst("caixaPreta")) {
+    if (matchLFirst("porygon") || matchLFirst("squirtle") ||
+        matchLFirst("unown")) {
       return true;
     }
 

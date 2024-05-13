@@ -12,7 +12,7 @@ import AFD.ID;
 import AFD.MathOperator;
 import AFD.Number;
 import AFD.Reservada;
-import AFD.StringText;
+import AFD.StringAFD;
 
 public class Lexer {
   private List<Token> tokens;
@@ -20,27 +20,25 @@ public class Lexer {
   private CharacterIterator code;
 
   public Lexer(String code) {
-    tokens = new ArrayList<>();
+    tokens = new ArrayList<>(); // Array para armazenar os Tokens
     this.code = new StringCharacterIterator(code);
-    afds = new ArrayList<>();
+    afds = new ArrayList<>(); // Array com todas as AFDs
     afds.add(new Comment());
     afds.add(new Reservada());
     afds.add(new MathOperator());
     afds.add(new Number());
     afds.add(new ID());
-    afds.add(new StringText());
+    afds.add(new StringAFD());
   }
 
-  // Metodo para pular espaco em branco
+  // Pula os espaços em branco
   public void skipWhiteSpace() {
-    while (code.current() == ' ' || code.current() == '\n' || code.current() == '\r' || code.current() == '\t'
-        || code.current() == CharacterIterator.DONE || (code.current() == '\r' && code.current() == '\n')) {
-      if (code.current() == '\n' || (code.current() == '\r' && code.current() == '\n')) {
-      }
+    while (code.current() == ' ' || code.current() == '\n' || code.current() == '\r' || code.current() == '\t' || code.current() == CharacterIterator.DONE) {
       code.next();
     }
   }
 
+  // Analisa cada token e armazena no array "tokens"
   public List<Token> getTokens() {
     boolean accepted;
 
@@ -48,11 +46,11 @@ public class Lexer {
       accepted = false;
       skipWhiteSpace();
 
-      if (code.current() == CharacterIterator.DONE)
+      if (code.current() == CharacterIterator.DONE) // Break quando terminar de analisar a entrada
         break;
 
       for (AFD afd : afds) {
-        int pos = code.getIndex();
+        int pos = code.getIndex(); // Salva o index da parte que está sendo analisada
         Token t = afd.evaluate(code);
 
         if (t != null) {
@@ -60,13 +58,13 @@ public class Lexer {
           tokens.add(t);
           break;
         } else {
-          code.setIndex(pos);
+          code.setIndex(pos); // Seta o index da parte analisada
         }
       }
 
-      if (accepted)
+      if (accepted) {
         continue;
-
+      }
       throw new RuntimeException("Error: Token not recognized: " + code.current());
     }
 

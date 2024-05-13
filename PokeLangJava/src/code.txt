@@ -1,18 +1,15 @@
 porygon x = 1;
 porygon y = 32;
 
-# Teste comentario
-
-eevee (x > 2) {
-	x = 1;
+eevee(x > 2) {
+	x++;
+	y--;
 } espeon {
-	x = 2;
-}
+		x = 2 / 2;
+	} // comentario
 
-forretress (porygon i = 1; 1 < 10; i++) {
-	pokedex(i);
-}
+var = 10;
+soma = 10 + 10;
+squirtle z = 10.5;
 
-poliwhirl (x < 5) {
-	squirtle(x);
-}
+unown str = "string";

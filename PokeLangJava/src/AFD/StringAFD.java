@@ -1,9 +1,11 @@
 package AFD;
 
 import java.text.CharacterIterator;
+import java.util.Arrays;
+import java.util.List;
 import Token.Token;
 
-public class StringText extends AFD {
+public class StringAFD extends AFD {
   @Override
   public Token evaluate(CharacterIterator code) {
     String stringText = "";
@@ -34,8 +36,14 @@ public class StringText extends AFD {
     return stringText;
   }
 
-  private boolean endString(CharacterIterator code) {
-    return code.current() == '\r' || code.current() == '\n' || code.current() == '"'
-        || code.current() == CharacterIterator.DONE;
-  }
+  private boolean endString(CharacterIterator code) { // Verifica se finalizou a declaração do ID
+		List<Character> finalizadores = Arrays.asList('"', '\n', ';', CharacterIterator.DONE);
+
+		for (char finalizador : finalizadores) {
+			if (code.current() == finalizador) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
