@@ -1,11 +1,10 @@
-Gramática Livre de Contexto
-
+# Gramática Livre de Contexto
 
 condicao -> id operador id | id operador num
 
 expressao -> id "=" id | id "=" num
 
-operador -> "=" | "!=" | ">" | "<" 
+operador -> "=" | "!=" | ">" | "<"
 
 numero -> [0-9]
 
@@ -13,17 +12,23 @@ argumento -> id | numero
 
 tipo ->
 
+IF
+`eevee ( condicao ) { expressao }`
 
-IF -> eevee ( condicao ) { expressao }
+ELIF
+`leafeon ( condicao ) { expressao }`
 
-ELIF -> leafeon ( condicao ) { expressao }
+ELSE
+`espeon { expressao }`
 
-ELSE -> espeon { expressao }
+FOR
+`forretress ( expressao ";" condicao ) { expressao }`
 
-FOR -> forretress ( expressao ";" condicao ) { expressao }
+WHILE
+`poliwhirl ( condicao ) { expressao }`
 
-WHILE -> poliwhirl ( condicao ) { expressao }
+INPUT
+`pokeball ( tipo )`
 
-INPUT -> pokeball ( tipo )
-
-PRINT -> pokedex ( argumento ) ";"
+PRINT
+`pokedex ( argumento ) ";"`
