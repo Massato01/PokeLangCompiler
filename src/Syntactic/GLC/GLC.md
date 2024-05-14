@@ -14,18 +14,23 @@ tipo ->
 
 IF
 
-````
+```
+
 eevee ( condicao ) { expressao
-}```
+}
+
+```
 
 ELIF
-````
+
+```
 
 leafeon ( condicao ) { expressao }
 
 ```
 
 ELSE
+
 ```
 
 espeon { expressao }
@@ -33,6 +38,7 @@ espeon { expressao }
 ```
 
 FOR
+
 ```
 
 forretress ( expressao ";" condicao ) { expressao }
@@ -40,6 +46,7 @@ forretress ( expressao ";" condicao ) { expressao }
 ```
 
 WHILE
+
 ```
 
 poliwhirl ( condicao ) { expressao }
@@ -47,6 +54,7 @@ poliwhirl ( condicao ) { expressao }
 ```
 
 INPUT (ACHO MELHOR TIRAR)
+
 ```
 
 pokeball ( tipo )
@@ -54,10 +62,9 @@ pokeball ( tipo )
 ```
 
 PRINT
+
 ```
 
 pokedex ( argumento ) ";"
-
-```
 
 ```
