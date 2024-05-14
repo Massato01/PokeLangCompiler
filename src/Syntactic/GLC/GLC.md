@@ -12,6 +12,8 @@ argumento -> id | numero
 
 tipo ->
 
+---
+
 IF
 
 ```
