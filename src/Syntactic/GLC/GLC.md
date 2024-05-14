@@ -16,8 +16,7 @@ IF
 
 ```
 
-eevee ( condicao ) { expressao
-}
+eevee ( condicao ) { expressao }
 
 ```
 
