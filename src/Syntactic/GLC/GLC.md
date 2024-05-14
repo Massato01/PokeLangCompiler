@@ -13,22 +13,51 @@ argumento -> id | numero
 tipo ->
 
 IF
-`eevee ( condicao ) { expressao }`
+
+````
+eevee ( condicao ) { expressao
+}```
 
 ELIF
-`leafeon ( condicao ) { expressao }`
+````
+
+leafeon ( condicao ) { expressao }
+
+```
 
 ELSE
-`espeon { expressao }`
+```
+
+espeon { expressao }
+
+```
 
 FOR
-`forretress ( expressao ";" condicao ) { expressao }`
+```
+
+forretress ( expressao ";" condicao ) { expressao }
+
+```
 
 WHILE
-`poliwhirl ( condicao ) { expressao }`
+```
 
-INPUT
-`pokeball ( tipo )`
+poliwhirl ( condicao ) { expressao }
+
+```
+
+INPUT (ACHO MELHOR TIRAR)
+```
+
+pokeball ( tipo )
+
+```
 
 PRINT
-`pokedex ( argumento ) ";"`
+```
+
+pokedex ( argumento ) ";"
+
+```
+
+```
