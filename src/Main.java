@@ -29,7 +29,7 @@ public class Main {
 
   public String Code() {
     try {
-        String code = new String(Files.readAllBytes(Paths.get("src\\code.txt")), StandardCharsets.UTF_8);
+        String code = new String(Files.readAllBytes(Paths.get("src\\code3.txt")), StandardCharsets.UTF_8);
         return code;
     } catch (IOException e) {
         e.printStackTrace();

@@ -1,3 +1,5 @@
+package Syntactic.GLC;
+
 public class Tree {
     Node root;
 

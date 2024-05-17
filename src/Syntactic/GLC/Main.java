@@ -1,5 +1,8 @@
+package Syntactic.GLC;
+
 import java.util.ArrayList;
 import java.util.List;
+import Token.Token;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,15 +26,14 @@ public class Main {
          */
 
         List<Token> tokens = new ArrayList<>();
-        tokens.add(new Token("se", "reservada_if"));
+        tokens.add(new Token("eevee", "reservada_if"));
         tokens.add(new Token("soma", "id"));
         tokens.add(new Token(">", "operador_condicional"));
         tokens.add(new Token("5", "num"));
-        tokens.add(new Token("entao", "reservada_then"));
         tokens.add(new Token("soma", "id"));
         tokens.add(new Token("=", "operador_atribuicao"));
         tokens.add(new Token("3", "num"));
-        tokens.add(new Token("senao", "reservada_else"));
+        tokens.add(new Token("espeon", "reservada_else"));
         tokens.add(new Token("soma", "id"));
         tokens.add(new Token("=", "operador_atribuicao"));
         tokens.add(new Token("2", "num"));

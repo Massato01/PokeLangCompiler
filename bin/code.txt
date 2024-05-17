@@ -1,0 +1,11 @@
+porygon x = 5;
+porygon y = 10;
+
+// IF
+eevee(x > 2) {
+	x = y / 2;
+	y = x * 2;
+} espeon {
+	x = 0;
+	y = 0;
+	}
