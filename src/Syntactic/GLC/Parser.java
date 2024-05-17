@@ -1,6 +1,7 @@
 
 package Syntactic.GLC;
 
+import java.util.Scanner;
 import java.util.List;
 import Token.Token;
 
