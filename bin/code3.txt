@@ -1,5 +1,3 @@
-porygon x = 10;
-
 eevee (x > 10) {
    x ++;
 }

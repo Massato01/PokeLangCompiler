@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -6,7 +7,7 @@ import java.nio.file.Paths;
 
 import Token.Token;
 import Lexer.Lexer;
-// import Syntactic.Parser;
+import Syntactic.GLC.Parser;
 
 public class Main {
   public static void main(String[] args) {
@@ -22,9 +23,9 @@ public class Main {
     for (Token token : tokens) {
       System.out.println(token);
     }
-
-    // Parser parser = new Parser(tokens);
-    // parser.main();
+    // TESTE PARSER   
+    Parser parser = new Parser(tokens);
+    System.out.println(parser.main());
   }
 
   public String Code() {

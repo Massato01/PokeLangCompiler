@@ -1,7 +1,5 @@
-
 package Syntactic.GLC;
 
-import java.util.Scanner;
 import java.util.List;
 import Token.Token;
 
@@ -14,21 +12,20 @@ public class Parser {
         this.tokens = tokens;
     }
 
-    public Tree main() {
-        Node node = new Node("eevee");
-        Tree tree = new Tree(node);
+    public void main() {
+        System.out.println("public class Main { public static void main(String[] args) {");
 
         token = getNextToken();
-        if (eevee(node)) {
-            if (token.tipo == "EOF") {
+        if (getNextToken()) {
+            if (token.getTipo().equals("EOF")) {
+                System.out.println("}}");
                 System.out.println("\nSintaticamente correta");
-                return tree;
             } else {
                 erro("main");
             }
+        } else {
+            erro("main");
         }
-        erro("main");
-        return null;
     }
 
     public Token getNextToken() {
@@ -38,98 +35,131 @@ public class Parser {
             return null;
     }
 
-    private void erro(String node) {
-        System.out.println("regra: " + node);
-        System.out.println("token inválido: " + token.lexema);
+    private boolean getNextToken() {
+        if (eevee()) {
+            return true;
+        } else if (forretress()) {
+            return true;
+        } else if (poliwhirl()) {
+            return true;
+        } else if (pokedex()) {
+            return true;
+        } else if (idType()) {
+            return true;
+        } else if (expressao()) {
+            return true;
+        } else if (condicao()) {
+            return true;
+        } else if (operador()) {
+            return true;
+        } else if (operadorAtribuicao()) {
+            return true;
+        } else if (id()) {
+            return true;
+        } else if (num()) {
+            return true;
+        } else if (token.getTipo().equals("EOF")) {
+            return true;
+        }
+        return false;
+    }
+
+    private void erro(String regra) {
+        System.out.println("Erro na regra: " + regra);
+        System.out.println("Token inválido: " + token.getLexema());
         System.exit(0);
     }
 
-    private boolean eevee(Node node) {
-        if (matchL("eevee", "if", node) &&
-                matchL("(", "(", node) &&
-                condicao(node.addChild("condicao")) &&
-                matchL(")", ")", node) &&
-                matchL("{", "{", node) &&
-                expressao(node.addChild("expressao")) &&
-                matchL("}", "}", node) &&
-                matchL("espeon", "else", node) &&
-                matchL("{", "{", node) &&
-                expressao(node.addChild("expressao")) &&
-                matchL("}", "}", node)) {
+    private boolean eevee() {
+        if (matchL("eevee", "if") &&
+                matchL("(", "(") &&
+                condicao() &&
+                matchL(")", ")") &&
+                matchL("{", "{") &&
+                expressao() &&
+                matchL("}", "}") &&
+                matchL("espeon", "else") &&
+                matchL("{", "{") &&
+                expressao() &&
+                matchL("}", "}")) {
             return true;
         }
         erro("eevee");
         return false;
     }
 
-    private boolean forretress(Node node) {
-        if (matchL("forretress", "for", node) &&
-                matchL("(", "(", node) &&
-                
-                condicao(node.addChild("condicao")) &&
-                expressao(node.addChild("expressao")) &&
-                matchL("espeon", "else", node) &&
-                expressao(node.addChild("expressao"))) {
+    private boolean forretress() {
+        if (matchL("forretress", "for") &&
+                matchL("(", "(") &&
+                expressao() &&
+                matchL(";", ";") &&
+                condicao() &&
+                matchL(";", ";") &&
+                expressao() &&
+                matchL(")", ")") &&
+                matchL("{", "{") &&
+                expressao() &&
+                matchL("}", "}")) {
             return true;
         }
+        erro("forretress");
+        return false;
     }
 
-    private boolean poliwhirl(Node node) {
-        if (matchL("poliwhirl", "while", node) &&
-                matchL("(", "(", node) &&
-                id(node.addChild("id")) &&
-                matchL(";", ";", node) &&
-                condicao(node.addChild("condicao")) &&
-                matchL(";", ";", node) &&
-                expressao(node.addChild("expressao")) &&
-                matchL(")", ")", node) &&
-                matchL("{", "{", node) &&
-                expressao(node.addChild("expressao")) &&
-                matchL("}", "}", node)) {
+    private boolean poliwhirl() {
+        if (matchL("poliwhirl", "while") &&
+                matchL("(", "(") &&
+                id() &&
+                matchL(";", ";") &&
+                condicao() &&
+                matchL(";", ";") &&
+                expressao() &&
+                matchL(")", ")") &&
+                matchL("{", "{") &&
+                expressao() &&
+                matchL("}", "}")) {
             return true;
         }
         erro("poliwhirl");
         return false;
     }
 
-    private boolean pokedex(Node node) {
-        if (matchL("pokedex", "System.out.println", node) &&
-                matchL("(", "(", node) &&
-                id(node.addChild("id")) &&
-                matchL(")", ")", node) &&
-                matchL(";", ";", node)) {
+    private boolean pokedex() {
+        if (matchL("pokedex", "System.out.println") &&
+                matchL("(", "(") &&
+                id() &&
+                matchL(")", ")") &&
+                matchL(";", ";")) {
             return true;
         }
         erro("pokedex");
         return false;
     }
 
-    private boolean idType(Node node){
-        if (matchL("porygon", "int", node) ||
-                matchL("squirtle", "float", node) ||
-                matchL("unown", "String", node)) {
+    private boolean idType() {
+        if (matchL("porygon", "int") ||
+                matchL("squirtle", "float") ||
+                matchL("unown", "String")) {
             return true;
         }
         erro("idType");
         return false;
     }
 
-    private boolean expressao(Node node) {
-        node.enter = "{";
-        if (id(node.addChild("id")) &&
-                operadorAtribuicao(node.addChild("operadorAtribuicao")) &&
-                num(node.addChild("num"))) {
-            node.exit = "}";
+    private boolean expressao() {
+        if (id() &&
+                operadorAtribuicao() &&
+                num()) {
             return true;
         }
         erro("expressao");
         return false;
     }
 
-    private boolean operador(Node node) {
-        if (matchL(">", ">", node) ||
-                matchL("<", "<", node) ||
-                matchL("==", "==", node)) {
+    private boolean operador() {
+        if (matchL(">", ">") ||
+                matchL("<", "<") ||
+                matchL("==", "==")) {
             return true;
         }
 
@@ -137,45 +167,43 @@ public class Parser {
         return false;
     }
 
-    private boolean condicao(Node node) {
-        node.enter = "(";
-        if (id(node.addChild("id")) &&
-                operador(node.addChild("operador")) &&
-                num(node.addChild("num"))) {
-            node.exit = ")";
+    private boolean condicao() {
+        if (id() &&
+                operador() &&
+                num()) {
             return true;
         }
         erro("condicao");
         return false;
     }
 
-    private boolean operadorAtribuicao(Node node) {
-        if (matchL("=", token.lexema, node)) {
+    private boolean operadorAtribuicao() {
+        if (matchL("=", "=")) {
             return true;
         }
         erro("operadorAtribuicao");
         return false;
     }
 
-    private boolean id(Node node) {
-        if (matchT("id", token.lexema, node)) {
+    private boolean id() {
+        if (matchT("id", token.getLexema())) {
             return true;
         }
         erro("id");
         return false;
     }
 
-    private boolean num(Node node) {
-        if (matchT("num", token.lexema, node)) {
+    private boolean num() {
+        if (matchT("num", token.getLexema())) {
             return true;
         }
         erro("num");
         return false;
     }
 
-    private boolean matchL(String palavra, String newcode, Node node) {
-        if (token.lexema.equals(palavra)) {
-            node.addChild(newcode);
+    private boolean matchL(String palavra, String newcode) {
+        if (token.getLexema().equals(palavra)) {
+            traduz(newcode);
             token = getNextToken();
             return true;
         }
@@ -183,13 +211,17 @@ public class Parser {
         return false;
     }
 
-    private boolean matchT(String palavra, String newcode, Node node) {
-        if (token.tipo.equals(palavra)) {
-            node.addChild(newcode);
+    private boolean matchT(String tipo, String newcode) {
+        if (token.getTipo().equals(tipo)) {
+            traduz(newcode);
             token = getNextToken();
             return true;
         }
-        erro(palavra);
+        erro(tipo);
         return false;
+    }
+
+    private void traduz(String code) {
+        System.out.print(code + " ");
     }
 }
