@@ -1,0 +1,49 @@
+taOk b = 1;
+taOk c = 1;
+taOk d = 3;
+caixaPreta texto = "É pra ser uma string";
+
+# Soma
+taOk soma = (b + c) * d;
+
+olhaSo(soma);
+
+# Printar um numero
+olhaSo(3);
+
+olhaSo("Funcionou com string");
+
+olhaSo(texto);
+
+# A partir daqui é o segundo teste
+
+gaviao x = 1.1;
+taOk y = 5;
+gaviao z = 2.2;
+taOk p = 10;
+
+#essa é uma soma
+gaviao result = x * y + z;
+
+# esse é o nosso if
+depende(result > 2) {
+  olhaSo(result);
+} planoB {
+	depende(result >= 2) {olhaSo(result);}
+}
+
+#if teste para ver um erro
+depende(result == 2){
+	olhaSo("Entrou no nosso comando if");
+}
+
+# Teste do fazDeNovo 
+fazDeNovo(y == 5) {
+	taOk aux = y+1;
+  olhaSo(aux);
+}
+
+# Teste 1 do nosso for
+eOSeuNegocio(taOk i = 0; i < 5; i++) {
+	olhaSo("Deu bom");
+}
