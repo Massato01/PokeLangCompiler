@@ -14,7 +14,6 @@ public class Main {
     List<Token> tokens = null;
 
     String codigoFonte = new Main().Code();
-    // String codigoFonte = "porygon x = 1;\nporygon y = 32;\neevee(x > 2) {\nx++;\ny--;\n} espeon {\nx = 2 / 2;\n} // comentario\nvar = 10\nsoma = 10 + 10\nsquirtle z = 10.5;";
 
     Lexer lexer = new Lexer(codigoFonte);
     tokens = lexer.getTokens();
@@ -25,7 +24,7 @@ public class Main {
     }
     // TESTE PARSER   
     Parser parser = new Parser(tokens);
-    System.out.println(parser.main());
+    parser.main();
   }
 
   public String Code() {

@@ -7,6 +7,7 @@ import Lexico.Token;
 public class Parser {
   List<Token> tokens;
   Token token;
+  private String tipoVariavel = "";
 
   public Parser(List<Token> tokens) {
     this.tokens = tokens;
@@ -29,12 +30,13 @@ public class Parser {
   }
 
   public void main() {
-    System.out.println("public class Main { public static void main(String[] args) {");
+    System.out.print(
+        "import java.util.Scanner;public class Main { public static void main(String[] args) {Scanner input = new Scanner(System.in);");
     token = nextToken();
 
     if (firstToken()) {
       if (matchT("EOF", "")) {
-        System.out.println("}}");
+        System.out.print("}}");
       } else {
         erro("Fudeu de vez!!!!");
       }
@@ -160,9 +162,42 @@ public class Parser {
     return false;
   }
 
+  // --------------------Receba--------------------
+  private boolean receba() {
+    if (tipoVariavel.equals("taOk")) { // int: input.nextInt()
+      if (matchL("receba", "input.nextInt") && matchL("(", "(") && matchL(")", ")")) {
+        return true;
+      }
+    } else if (tipoVariavel.equals("gaviao")) { // double: input.nextDouble()
+      if (matchL("receba", "input.nextDouble") && matchL("(", "(") && matchL(")",
+          ")")) {
+        return true;
+      }
+    } else if (tipoVariavel.equals("caixaPreta")) { // string: input.nextLine()
+      if (matchL("receba", "input.nextLine") && matchL("(", "(") && matchL(")", ")")) {
+        return true;
+      }
+    }
+
+    erro("Receba invalido: " + token);
+    return false;
+  }
+
   // --------------------Funcoes intermediarias--------------------
   private boolean tipoVariavel() {
-    if (matchL("taOk", "int ") || matchL("gaviao", "double ") || matchL("caixaPreta", "String ")) {
+    // if (matchL("taOk", "int ") || matchL("gaviao", "double ") ||
+    // matchL("caixaPreta", "String ")) {
+    // return true;
+    // }
+
+    if (matchL("taOk", "int ")) {
+      tipoVariavel = "taOk";
+      return true;
+    } else if (matchL("gaviao", "double ")) {
+      tipoVariavel = "gaviao";
+      return true;
+    } else if (matchL("caixaPreta", "String ")) {
+      tipoVariavel = "caixaPreta";
       return true;
     }
 
@@ -228,7 +263,7 @@ public class Parser {
   }
 
   private boolean mathExpressao() {
-    if (math() && mathExpressaoLinha()) {
+    if (math() && mathExpressaoLinha() || receba()) {
       return true;
     }
 
@@ -272,7 +307,8 @@ public class Parser {
   private boolean F() {
     if (matchT("ID", token.getLexema()) || matchT("NUM", token.getLexema()) || matchT("FLUTUANTE", token.getLexema())
         || matchT("STRING", token.getLexema())
-        || (matchL("(", "(") && mathExpressao() && matchL(")", ")"))) {
+        || (matchL("(", "(") && mathExpressao() && matchL(")", ")"))
+        || receba()) {
       return true;
     }
 

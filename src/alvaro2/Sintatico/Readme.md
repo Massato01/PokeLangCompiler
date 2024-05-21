@@ -8,7 +8,7 @@
 first -> depende first | fazDeNovo first | eOSeuNegocio first | olhaSo first | variavel first | comentario first | olhaSo first | ε
 ```
 
-### Depende - IF -> Ok com resalva
+### Depende - IF -> Ok
 
 ```txt
 depende -> depende ( condicao ) { first } planoB
@@ -75,7 +75,7 @@ mathExpressao’ -> +TmathExpressao’ | -TmathExpressao’ | ε
 math -> Fmath´
 math´ -> *Fmath´ | /Fmath´ | ε
 
-F -> id | num | flutuante | ( mathExpressao )
+F -> id | num | flutuante | input | ( mathExpressao )
 
 id -> [a-zA-Z]⁺
 num -> [0-9]⁺
@@ -101,4 +101,10 @@ id -> [a-zA-Z]⁺
 num -> [0-9]⁺
 flutuante -> num.num
 string -> " (id + num + flutuante) "
+```
+
+### Receba -> Input ->
+
+```txt
+input -> receba ( )
 ```
