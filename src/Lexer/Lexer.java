@@ -31,10 +31,10 @@ public class Lexer {
     this.code = new StringCharacterIterator(code);
     afds = new ArrayList<>(); // Array com todas as AFDs
     afds.add(new Comment());
-    afds.add(new ID());
-    afds.add(new MathOperator());
     afds.add(new Reservada());
+    afds.add(new MathOperator());
     afds.add(new Number());
+    afds.add(new ID());
     afds.add(new StringAFD());
   }
 

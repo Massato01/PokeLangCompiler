@@ -1,4 +1,4 @@
-package Syntactic.GLC;
+package Syntactic;
 
 public class Poliwhirl {
     private Parser parser;
@@ -9,9 +9,9 @@ public class Poliwhirl {
 
     public boolean poliwhirl() {
         if (
-            parser.matchLexema("poliwhirl", "while") && parser.matchLexema("(", "(") && parser.condicao() && parser.matchLexema(")", ")") &&
+            parser.matchLexema("poliwhirl", "while") && parser.matchLexema("(", "(") && parser.condicaoParser.condicao() && parser.matchLexema(")", ")") &&
             parser.matchLexema("{", "{") &&
-            parser.firstToken() &&
+            parser.parseToken() &&
             parser.matchLexema("}", "}")
             ) {
             return true;

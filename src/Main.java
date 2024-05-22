@@ -4,10 +4,13 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 
 import Token.Token;
 import Lexer.Lexer;
-import Syntactic.GLC.Parser;
+import Syntactic.Parser;
 
 public class Main {
   public static void main(String[] args) {
@@ -18,16 +21,41 @@ public class Main {
     Lexer lexer = new Lexer(codigoFonte);
     tokens = lexer.getTokens();
 
-    // PRINTA OS TOKENS
+    System.out.print("=== Codigo de entrada: === \n" + codigoFonte);
+    // TESTE LEXICO
+    System.out.println("\n\n=== Analisando Tokens... ===");
     for (Token token : tokens) {
       System.out.println(token);
     }
-    
-    // TESTE PARSER   
+    System.out.println("=== Tokens Analisados ===\n");
+
+    // TESTE SINTATICO   
+    System.out.println("=== Codigo Traduzido para JAVA ===\n");
     Parser parser = new Parser(tokens);
     parser.main();
   }
 
+  public String CodeTeste() {
+    StringBuilder codeBuilder = new StringBuilder();
+    File arquivo = new File("src\\code2.txt");
+
+    try {
+        FileReader leitor = new FileReader(arquivo);
+        BufferedReader buffer = new BufferedReader(leitor);
+
+        String linha;
+        while ((linha = buffer.readLine()) != null) {
+            codeBuilder.append(linha).append("\n");
+        }
+
+        buffer.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+    return codeBuilder.toString();
+  }
+  
   public String Code() {
     try {
         String code = new String(Files.readAllBytes(Paths.get("src\\code2.txt")), StandardCharsets.UTF_8);

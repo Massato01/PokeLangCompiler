@@ -1,8 +1,9 @@
-package Syntactic.GLC;
+package Syntactic;
 
 import java.util.List;
 import Token.Token;
 
+// IF: { if, (, condicao, ), {, parseToken, }, else, {, parseToken, } }
 public class Eevee {
     private Parser parser;
 
@@ -12,9 +13,9 @@ public class Eevee {
 
     public boolean eevee() {
         if (
-            parser.matchLexema("eevee", "if") && parser.matchLexema("(", "(") && parser.condicao() && parser.matchLexema(")", ")") &&
+            parser.matchLexema("eevee", "if") && parser.matchLexema("(", "(") && parser.condicaoParser.condicao() && parser.matchLexema(")", ")") &&
             parser.matchLexema("{", "{") &&
-            parser.firstToken() &&
+            parser.parseToken() &&
             parser.matchLexema("}", "}") &&
             espeon()
             ) {
@@ -27,7 +28,7 @@ public class Eevee {
 
     private boolean espeon() {
         if (parser.matchLexema("espeon", "else")) {
-            if (parser.matchLexema("{", "{") && parser.firstToken() && parser.matchLexema("}", "}")) {
+            if (parser.matchLexema("{", "{") && parser.parseToken() && parser.matchLexema("}", "}")) {
                 return true;
             }
             parser.erro("espeon");

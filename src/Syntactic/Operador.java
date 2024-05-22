@@ -1,4 +1,4 @@
-package Syntactic.GLC;
+package Syntactic;
 
 public class Operador {
     private Parser parser;

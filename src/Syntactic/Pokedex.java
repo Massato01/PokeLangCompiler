@@ -1,4 +1,4 @@
-package Syntactic.GLC;
+package Syntactic;
 
 public class Pokedex {
     private Parser parser;
@@ -9,7 +9,10 @@ public class Pokedex {
 
     public boolean pokedex() {
         if (
-            parser.matchLexema("pokedex", "System.out.println") && parser.matchLexema("(", "(") && parser.id() && parser.matchLexema(")", ")") &&
+            parser.matchLexema("pokedex", "System.out.println") &&
+            parser.matchLexema("(", "(") &&
+            parser.identificadorParser.id() &&
+            parser.matchLexema(")", ")") &&
             parser.matchLexema(";", ";")
             ) {
             return true;
