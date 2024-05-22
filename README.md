@@ -86,11 +86,11 @@ poliwhirl ( condicao ) { expressao }
 
 ```
 
-- INPUT (ACHO MELHOR TIRAR)
+- INPUT
 
 ```
 
-pokeball ( tipo )
+pokeball ( tipo );
 
 ```
 
