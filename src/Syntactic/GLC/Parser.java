@@ -1,459 +1,319 @@
-// package Syntactic.GLC;
-
-// import java.util.List;
-// import Token.Token;
-
-// public class Parser {
-
-//     List<Token> tokens;
-//     Token token;
-
-//     public Parser(List<Token> tokens) {
-//         this.tokens = tokens;
-//     }
-
-//     public void main() {
-//         System.out.println("public class Main { public static void main(String[] args) {");
-
-//         token = getNextToken();
-//         // if (getNextToken()) {
-//         if (token) {
-//             if (token.getTipo().equals("EOF")) {
-//                 System.out.println("}}");
-//                 System.out.println("\nSintaticamente correta");
-//             } else {
-//                 erro("main");
-//             }
-//         } else {
-//             erro("main");
-//         }
-//     }
-
-//     public Token getNextToken() {
-//         if (tokens.size() > 0) {
-//             return tokens.remove(0);
-//         } else
-//             return null;
-//     }
-
-//     private boolean getNextToken() {
-//         if (eevee()) {
-//             return true;
-//         } else if (forretress()) {
-//             return true;
-//         } else if (poliwhirl()) {
-//             return true;
-//         } else if (pokedex()) {
-//             return true;
-//         } else if (idType()) {
-//             return true;
-//         } else if (expressao()) {
-//             return true;
-//         } else if (condicao()) {
-//             return true;
-//         } else if (operador()) {
-//             return true;
-//         } else if (operadorAtribuicao()) {
-//             return true;
-//         } else if (id()) {
-//             return true;
-//         } else if (num()) {
-//             return true;
-//         } else if (token.getTipo().equals("EOF")) {
-//             return true;
-//         }
-//         return false;
-//     }
-
-//     private void erro(String regra) {
-//         System.out.println("Erro na regra: " + regra);
-//         System.out.println("Token inválido: " + token.getLexema());
-//         System.exit(0);
-//     }
-
-//     private boolean eevee() {
-//         if (matchL("eevee", "if") &&
-//                 matchL("(", "(") &&
-//                 condicao() &&
-//                 matchL(")", ")") &&
-//                 matchL("{", "{") &&
-//                 expressao() &&
-//                 matchL("}", "}") &&
-//                 matchL("espeon", "else") &&
-//                 matchL("{", "{") &&
-//                 expressao() &&
-//                 matchL("}", "}")) {
-//             return true;
-//         }
-//         erro("eevee");
-//         return false;
-//     }
-
-//     private boolean forretress() {
-//         if (matchL("forretress", "for") &&
-//                 matchL("(", "(") &&
-//                 expressao() &&
-//                 matchL(";", ";") &&
-//                 condicao() &&
-//                 matchL(";", ";") &&
-//                 expressao() &&
-//                 matchL(")", ")") &&
-//                 matchL("{", "{") &&
-//                 expressao() &&
-//                 matchL("}", "}")) {
-//             return true;
-//         }
-//         erro("forretress");
-//         return false;
-//     }
-
-//     private boolean poliwhirl() {
-//         if (matchL("poliwhirl", "while") &&
-//                 matchL("(", "(") &&
-//                 id() &&
-//                 matchL(";", ";") &&
-//                 condicao() &&
-//                 matchL(";", ";") &&
-//                 expressao() &&
-//                 matchL(")", ")") &&
-//                 matchL("{", "{") &&
-//                 expressao() &&
-//                 matchL("}", "}")) {
-//             return true;
-//         }
-//         erro("poliwhirl");
-//         return false;
-//     }
-
-//     private boolean pokedex() {
-//         if (matchL("pokedex", "System.out.println") &&
-//                 matchL("(", "(") &&
-//                 id() &&
-//                 matchL(")", ")") &&
-//                 matchL(";", ";")) {
-//             return true;
-//         }
-//         erro("pokedex");
-//         return false;
-//     }
-
-//     private boolean idType() {
-//         if (matchL("porygon", "int") ||
-//                 matchL("squirtle", "float") ||
-//                 matchL("unown", "String")) {
-//             return true;
-//         }
-//         erro("idType");
-//         return false;
-//     }
-
-//     private boolean expressao() {
-//         if (id() &&
-//                 operadorAtribuicao() &&
-//                 num()) {
-//             return true;
-//         }
-//         erro("expressao");
-//         return false;
-//     }
-
-//     private boolean operador() {
-//         if (matchL(">", ">") ||
-//                 matchL("<", "<") ||
-//                 matchL("==", "==")) {
-//             return true;
-//         }
-
-//         erro("operador");
-//         return false;
-//     }
-
-//     private boolean condicao() {
-//         if (id() &&
-//                 operador() &&
-//                 num()) {
-//             return true;
-//         }
-//         erro("condicao");
-//         return false;
-//     }
-
-//     private boolean operadorAtribuicao() {
-//         if (matchL("=", "=")) {
-//             return true;
-//         }
-//         erro("operadorAtribuicao");
-//         return false;
-//     }
-
-//     private boolean id() {
-//         if (matchT("id", token.getLexema())) {
-//             return true;
-//         }
-//         erro("id");
-//         return false;
-//     }
-
-//     private boolean num() {
-//         if (matchT("num", token.getLexema())) {
-//             return true;
-//         }
-//         erro("num");
-//         return false;
-//     }
-
-//     private boolean matchL(String palavra, String newcode) {
-//         if (token.getLexema().equals(palavra)) {
-//             traduz(newcode);
-//             token = getNextToken();
-//             return true;
-//         }
-//         erro(palavra);
-//         return false;
-//     }
-
-//     private boolean matchT(String tipo, String newcode) {
-//         if (token.getTipo().equals(tipo)) {
-//             traduz(newcode);
-//             token = getNextToken();
-//             return true;
-//         }
-//         erro(tipo);
-//         return false;
-//     }
-
-//     private void traduz(String code) {
-//         System.out.print(code + " ");
-//     }
-// }
-
-// --------------------------------------------------------------
-
 package Syntactic.GLC;
 
 import java.util.List;
 import Token.Token;
 
 public class Parser {
+  List<Token> tokens;
+  Token token;
 
-    List<Token> tokens;
-    Token token;
+  private String tipoVariavel = ""; // Para o INPUT
+  private Eevee eeveeParser; // GLC Eevee
+  private Forretress forretressParser; // GLC Forretress
+  private Poliwhirl poliwhirlParser; // GLC Poliwhirl
+  private Pokedex pokedexParser; //GLC Pokedex
+  private Operador operadorParser; //GLC Operador
 
-    public Parser(List<Token> tokens) {
-        this.tokens = tokens;
+  public Parser(List<Token> tokens) {
+    this.tokens = tokens;
+    this.eeveeParser = new Eevee(this);
+    this.forretressParser = new Forretress(this);
+    this.poliwhirlParser = new Poliwhirl(this);
+    this.pokedexParser = new Pokedex(this);
+    this.operadorParser = new Operador(this);
+  }
+
+  public void main() {
+    System.out.println("// POKELANG\nimport java.util.Scanner;\n\npublic class Main {\npublic static void main(String[] args) {\nScanner input = new Scanner(System.in);\n");
+    token = nextToken();
+
+    if (firstToken()) {
+      if (matchTipo("EOF", "")) {
+        System.out.print("\n}}");
+      } else {
+        erro("MAIN");
+      }
+    }
+  }
+
+  public Token nextToken() {
+    if (tokens.size() > 0)
+      return tokens.remove(0);
+
+    return null;
+  }
+
+  public boolean firstToken() {
+    if (tipoVariavelFirst()) {
+      if (atribVariavel()) {
+        firstToken();
+        return true;
+      }
+    } else if (matchTFirst("comentario")) {
+      if (comentario()) {
+        firstToken();
+        return true;
+      }
+    } else if (matchLFirst("eevee")) {
+      if (eeveeParser.eevee()) {
+        firstToken();
+        return true;
+      }
+    } else if (matchLFirst("forretress")) {
+      if (forretressParser.forretress()) {
+        firstToken();
+        return true;
+      }
+    } else if (matchLFirst("poliwhirl")) {
+      if (poliwhirlParser.poliwhirl()) {
+        firstToken();
+        return true;
+      }
+    } else if (matchLFirst("pokedex")) {
+      if (pokedexParser.pokedex()) {
+        firstToken();
+        return true;
+      }
+    // } else if (matchLFirst("++")) {
+    //   if (operadorParser.operador()) {
+    //     firstToken();
+    //     return true;
+    //   }
+  } else if (matchTFirst("id")) {
+    if (id()) {
+      firstToken();
+      return true;
+    }
+    } else {
+      return true;
     }
 
-    public void main() {
-        System.out.println("public class Main {\npublic static void main(String[] args) {");
+    erro("FirstToken: " + token);
+    return false;
+  }
 
-        token = getNextToken(); // Get the first token
-        if (token != null) { // Check if the token is not null
-            if (token.getTipo().equals("EOF")) {
-                System.out.println("}}");
-                System.out.println("\nSintaticamente correta");
-            } else {
-                erro("main");
-            }
-        } else {
-            erro("main");
+  public void erro(String regra) {
+    System.out.println("\n\nErro na regra: " + regra);
+    System.out.println("Token inválido: " + token);
+    System.out.println("token invalido: " + token.getLexema());
+    System.exit(0);
+  }
+
+  // --------------------TipoVariavel--------------------
+  public boolean tipoVariavel() {
+    if (matchLexema("porygon", "int ")) {
+      tipoVariavel = "porygon";
+      return true;
+    } else if (matchLexema("squirtle", "double ")) {
+      tipoVariavel = "squirtle";
+      return true;
+    } else if (matchLexema("unown", "String ")) {
+      tipoVariavel = "unown";
+      return true;
+    }
+
+    erro("TipoVariavel");
+    return false;
+  }
+
+  // --------------------Atribuição Variavel--------------------
+  public boolean atribVariavel() {
+    if (tipoVariavel() && id() && matchLexema("=", "=") && mathExpressao() && matchLexema(";", ";")) {
+      return true;
+    }
+
+    erro("atribVariavel");
+    return false;
+  }
+
+  // --------------------ID--------------------
+  public boolean id() {
+    if (
+      matchTipo("id", token.getLexema()) ||
+      matchTipo("num", token.getLexema()) ||
+      matchTipo("flutuante", token.getLexema()) ||
+      matchTipo("string", token.getLexema())
+      ) {
+      return true;
+    }
+
+    erro("id");
+    return false;
+  }
+
+  // --------------------Comentário--------------------
+  public boolean comentario() {
+    if (matchTipo("comentario>", "")) {
+      return true;
+    }
+
+    erro("comentario");
+    return false;
+  }
+
+  // --------------------Receba--------------------
+  public boolean receba() {
+    if (tipoVariavel.equals("porygon")) { // int: input.nextInt()
+      if (matchLexema("receba", "input.nextInt") && matchLexema("(", "(") && matchLexema(")", ")")) {
+        return true;
+      }
+    } else if (tipoVariavel.equals("squirtle")) { // double: input.nextDouble()
+      if (matchLexema("receba", "input.nextDouble") && matchLexema("(", "(") && matchLexema(")",
+          ")")) {
+        return true;
+      }
+    } else if (tipoVariavel.equals("unown")) { // string: input.nextLine()
+      if (matchLexema("receba", "input.nextLine") && matchLexema("(", "(") && matchLexema(")", ")")) {
+        return true;
+      }
+    }
+
+    erro("Receba");
+    return false;
+  }
+
+  // --------------------Funcoes intermediarias--------------------
+
+  public boolean tipoVariavelFirst() {
+    if (matchLFirst("porygon") || matchLFirst("squirtle") ||
+        matchLFirst("unown")) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // --------------------Condição--------------------
+  public boolean condicao() {
+    if (id() && operadorParser.operador() && id()) {
+      if (matchLexema("&&", "&&") || matchLexema("||", "||")) {
+        if (condicao()) {
+          return true;
         }
+      } else {
+        return true; // ε
+      }
     }
 
-    public Token getNextToken() {
-        if (tokens.size() > 0) {
-            return tokens.remove(0);
-        } else {
-            return null;
-        }
+    erro("Condicao");
+    return false;
+  }
+  
+  public boolean mathExpressao() {
+    if (math() && mathExpressaoLinha() || receba()) {
+    // if (math() && mathExpressaoLinha()) {
+      return true;
     }
 
-    private boolean parseToken() { // Renamed from getNextToken to parseToken
-        if (eevee()) {
-            return true;
-        } else if (forretress()) {
-            return true;
-        } else if (poliwhirl()) {
-            return true;
-        } else if (pokedex()) {
-            return true;
-        } else if (idType()) {
-            return true;
-        } else if (expressao()) {
-            return true;
-        } else if (condicao()) {
-            return true;
-        } else if (operador()) {
-            return true;
-        } else if (operadorAtribuicao()) {
-            return true;
-        } else if (id()) {
-            return true;
-        } else if (num()) {
-            return true;
-        } else if (token != null && token.getTipo().equals("EOF")) {
-            return true;
-        }
-        return false;
+    erro("mathExpressao");
+    return false;
+  }
+
+  public boolean mathExpressaoLinha() {
+    if (matchLexema("+", "+") || matchLexema("-", "-") || matchLexema("++", "++")) {
+      if (math() && mathExpressaoLinha()) {
+        return true;
+      }
+      erro("mathExpressaoLinha");
+      return false;
     }
 
-    private void erro(String regra) {
-        System.out.println("Erro na regra: " + regra);
-        System.out.println("Token inválido: " + (token != null ? token.getLexema() : "null"));
-        System.exit(0);
+    return true; // ε
+  }
+
+  public boolean math() {
+    if (F() && mathLinha()) {
+      return true;
     }
 
-    private boolean eevee() {
-        if (matchL("eevee", "if") &&
-                matchL("(", "(") &&
-                condicao() &&
-                matchL(")", ")") &&
-                matchL("{", "{") &&
-                expressao() &&
-                matchL("}", "}") &&
-                matchL("espeon", "else") &&
-                matchL("{", "{") &&
-                expressao() &&
-                matchL("}", "}")) {
-            return true;
-        }
-        erro("eevee");
-        return false;
+    erro("Math");
+    return false;
+  }
+
+  public boolean mathLinha() {
+    if (matchLexema("*", "*") || matchLexema("/", "/")) {
+      if (F() && mathLinha()) {
+        return true;
+      }
+      erro("mathLinha");
+      return false;
     }
 
-    private boolean forretress() {
-        if (matchL("forretress", "for") &&
-                matchL("(", "(") &&
-                expressao() &&
-                matchL(";", ";") &&
-                condicao() &&
-                matchL(";", ";") &&
-                expressao() &&
-                matchL(")", ")") &&
-                matchL("{", "{") &&
-                expressao() &&
-                matchL("}", "}")) {
-            return true;
-        }
-        erro("forretress");
-        return false;
+    return true; // ε
+  }
+
+  public boolean F() {
+    if (matchTipo("id", token.getLexema()) || matchTipo("num", token.getLexema()) || matchTipo("flutuante", token.getLexema())
+        || matchTipo("string", token.getLexema())
+        || (matchLexema("(", "(") && mathExpressao() && matchLexema(")", ")"))
+        || receba()) {
+      return true;
     }
 
-    private boolean poliwhirl() {
-        if (matchL("poliwhirl", "while") &&
-                matchL("(", "(") &&
-                id() &&
-                matchL(";", ";") &&
-                condicao() &&
-                matchL(";", ";") &&
-                expressao() &&
-                matchL(")", ")") &&
-                matchL("{", "{") &&
-                expressao() &&
-                matchL("}", "}")) {
-            return true;
-        }
-        erro("poliwhirl");
-        return false;
+    erro("F");
+    return false;
+  }
+
+  public boolean varContador() {
+    if (tipoVariavel() && id() && matchLexema("=", "=") && matchTipo("num", token.getLexema())) {
+      return true;
     }
 
-    private boolean pokedex() {
-        if (matchL("pokedex", "System.out.println") &&
-                matchL("(", "(") &&
-                id() &&
-                matchL(")", ")") &&
-                matchL(";", ";")) {
-            return true;
-        }
-        erro("pokedex");
-        return false;
+    erro("VarContador");
+    return false;
+  }
+
+  public boolean incremento() {
+    if (matchTipo("id", token.getLexema()) && operadorParser.operador()) {
+      if (matchTipo("num", token.getLexema())) {
+        return true;
+      } else {
+        return true; // ε
+      }
     }
 
-    private boolean idType() {
-        if (matchL("porygon", "int") ||
-                matchL("squirtle", "float") ||
-                matchL("unown", "String")) {
-            return true;
-        }
-        erro("idType");
-        return false;
+    erro("Incremento");
+    return false;
+  }
+
+  // --------------------Verificacao Dados--------------------
+  private boolean matchLFirst(String lexema) {
+    if (token.getLexema().equals(lexema)) {
+      return true;
     }
 
-    private boolean expressao() {
-        if (id() &&
-                operadorAtribuicao() &&
-                num()) {
-            return true;
-        }
-        erro("expressao");
-        return false;
+    return false;
+  }
+
+  private boolean matchTFirst(String tipo) {
+    if (token.getTipo().equals(tipo)) {
+      return true;
     }
 
-    private boolean operador() {
-        if (matchL(">", ">") ||
-                matchL("<", "<") ||
-                matchL("==", "==")) {
-            return true;
-        }
+    return false;
+  }
 
-        erro("operador");
-        return false;
+  public boolean matchLexema(String lexema, String newCode) {
+    if (token.getLexema().equals(lexema)) {
+      traduz(newCode);
+      token = nextToken();
+      return true;
     }
 
-    private boolean condicao() {
-        if (id() &&
-                operador() &&
-                num()) {
-            return true;
-        }
-        erro("condicao");
-        return false;
+    return false;
+  }
+
+  public boolean matchTipo(String tipo, String newCode) {
+    if (token.getTipo().equals(tipo)) {
+      traduz(newCode);
+      token = nextToken();
+      return true;
     }
 
-    private boolean operadorAtribuicao() {
-        if (matchL("=", "=")) {
-            return true;
-        }
-        erro("operadorAtribuicao");
-        return false;
-    }
+    return false;
+  }
 
-    private boolean id() {
-        if (token != null && matchT("id", token.getLexema())) {
-            return true;
-        }
-        erro("id");
-        return false;
-    }
-
-    private boolean num() {
-        if (token != null && matchT("num", token.getLexema())) {
-            return true;
-        }
-        erro("num");
-        return false;
-    }
-
-    private boolean matchL(String palavra, String newcode) {
-        if (token != null && token.getLexema().equals(palavra)) {
-            traduz(newcode);
-            token = getNextToken();
-            return true;
-        }
-        erro(palavra);
-        return false;
-    }
-
-    private boolean matchT(String tipo, String newcode) {
-        if (token != null && token.getTipo().equals(tipo)) {
-            traduz(newcode);
-            token = getNextToken();
-            return true;
-        }
-        erro(tipo);
-        return false;
-    }
-
-    private void traduz(String code) {
-        System.out.print(code + " ");
-    }
+  private void traduz(String code) {
+    System.out.print(code + " ");
+  }
 }

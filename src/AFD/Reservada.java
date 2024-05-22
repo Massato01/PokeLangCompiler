@@ -6,7 +6,7 @@ import java.util.List;
 import Token.Token;
 
 public class Reservada extends AFD {
-	String reservadas[] = {"eevee", "espeon", "forretress", "poliwhirl", "porygon", "squirtle", "unown", "pokeball", "pokedex", "ditto"};
+	String reservadas[] = {"porygon", "squirtle", "unown", "pokeball", "pokedex", "eevee", "espeon", "forretress", "poliwhirl", "ditto"};
 
 	@Override
 	public Token evaluate(CharacterIterator code) {
@@ -24,7 +24,7 @@ public class Reservada extends AFD {
 
 			if (endReservada(code)) {
 				if (reservada.equals(reservadas[i])) {
-					return new Token("RESERVADA_" + reservadas[i].toUpperCase(), reservada);
+					return new Token("reservada_" + reservadas[i], reservada);
 				}
 			}
 			i++;
@@ -34,7 +34,7 @@ public class Reservada extends AFD {
 	}
 
 	private boolean endReservada(CharacterIterator code) {
-		List<Character> finalizadores = Arrays.asList(' ', '(', ')', '{', '}', '[', ']', ';', CharacterIterator.DONE);
+		List<Character> finalizadores = Arrays.asList(' ', '(', ')', ';', CharacterIterator.DONE);
 
 		for (char finalizador : finalizadores) {
 			if (code.current() == finalizador) {

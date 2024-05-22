@@ -14,13 +14,13 @@ public class Number extends AFD {
 			number = readNumber(code);
 
 			if (endNumber(code) == true) { // Se a entrada for finalizada retorna o Token de NUM
-				return new Token("NUM", number);
+				return new Token("num", number);
 			}
 			code.next();
 			number += '.'; // Se for um FLOAT, chamará a função readNumber adicionando o "."
 			number += readNumber(code);
 			if (endNumber(code) == true) {
-				return new Token("FLUTUANTE", number);
+				return new Token("flutuante", number);
 			}
 		}
 

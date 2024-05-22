@@ -19,23 +19,23 @@ public class Lexer {
   private List<AFD> afds;
   private CharacterIterator code;
 
-  public Lexer(String code) {
-    tokens = new ArrayList<>(); // Array para armazenar os Tokens
-    this.code = new StringCharacterIterator(code);
-    afds = new ArrayList<>(); // Array com todas as AFDs
-    afds.add(new Comment());
-    afds.add(new Reservada());
-    afds.add(new MathOperator());
-    afds.add(new Number());
-    afds.add(new ID());
-    afds.add(new StringAFD());
-  }
-
   // Pula os espaços em branco
   public void skipWhiteSpace() {
     while (code.current() == ' ' || code.current() == '\n' || code.current() == '\r' || code.current() == '\t' || code.current() == CharacterIterator.DONE) {
       code.next();
     }
+  }
+
+  public Lexer(String code) {
+    tokens = new ArrayList<>(); // Array para armazenar os Tokens
+    this.code = new StringCharacterIterator(code);
+    afds = new ArrayList<>(); // Array com todas as AFDs
+    afds.add(new Comment());
+    afds.add(new ID());
+    afds.add(new MathOperator());
+    afds.add(new Reservada());
+    afds.add(new Number());
+    afds.add(new StringAFD());
   }
 
   // Analisa cada token e armazena no array "tokens"

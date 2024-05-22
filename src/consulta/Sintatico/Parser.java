@@ -31,7 +31,7 @@ public class Parser {
 
   public void main() {
     System.out.print(
-        "import java.util.Scanner;public class Main { public static void main(String[] args) {Scanner input = new Scanner(System.in);");
+        "import java.util.Scanner;\n\npublic class Main {\npublic static void main(String[] args) {\nScanner input = new Scanner(System.in);\n\n");
     token = nextToken();
 
     if (firstToken()) {

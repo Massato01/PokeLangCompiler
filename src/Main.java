@@ -22,6 +22,7 @@ public class Main {
     for (Token token : tokens) {
       System.out.println(token);
     }
+    
     // TESTE PARSER   
     Parser parser = new Parser(tokens);
     parser.main();
@@ -29,7 +30,7 @@ public class Main {
 
   public String Code() {
     try {
-        String code = new String(Files.readAllBytes(Paths.get("src\\code3.txt")), StandardCharsets.UTF_8);
+        String code = new String(Files.readAllBytes(Paths.get("src\\code2.txt")), StandardCharsets.UTF_8);
         return code;
     } catch (IOException e) {
         e.printStackTrace();

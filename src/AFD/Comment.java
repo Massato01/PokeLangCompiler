@@ -14,7 +14,7 @@ public class Comment extends AFD {
 
                 String comment = readComment(code);
 
-                return new Token("COMENTARIO", comment);
+                return new Token("comentario", comment);
             }
         }
         return null;

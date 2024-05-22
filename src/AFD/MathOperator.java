@@ -11,78 +11,91 @@ public class MathOperator extends AFD {
                 code.next();
                 if (code.current() == '+') {
                     code.next();
-                    return new Token("INCREMENTO", "++");
+                    return new Token("incremento", "++");
                 } else {
                     code.next();
-                    return new Token("SOMA", "+");
+                    return new Token("soma", "+");
                 }
+            // case 'p':
+            //     code.next();
+            //     if (code.current() == 'i') {
+            //         code.next();
+            //         return new Token("incremento", "++")
+            //     }
             case '-':
                 code.next();
                 if (code.current() == '-') {
                     code.next();
-                    return new Token("DECREMENTO", "--");
+                    return new Token("decremento", "--");
                 } else {
                     code.next();
-                    return new Token("SUB", "-");
+                    return new Token("sub", "-");
                 }
             case '*':
                 code.next();
-                return new Token("MUL", "*");
+                return new Token("mul", "*");
             case '/':
                 code.next();
-                return new Token("DIV", "/");
+                return new Token("div", "/");
             case '(':
                 code.next();
-                return new Token("LPAREN", "(");
+                return new Token("lparen", "(");
             case ')':
                 code.next();
-                return new Token("RPAREN", ")");
+                return new Token("rparen", ")");
             case '[':
                 code.next();
-                return new Token("LCOLCHETE", "[");
+                return new Token("lcolchete", "[");
             case ']':
                 code.next();
-                return new Token("RCOLCHETE", "]");
+                return new Token("rcolchete", "]");
             case '{':
                 code.next();
-                return new Token("LCHAVE", "{");
+                return new Token("lchave", "{");
             case '}':
                 code.next();
-                return new Token("RCHAVE", "}");
+                return new Token("rchave", "}");
             case ';':
                 code.next();
-                return new Token("FIM", ";");
+                return new Token("fim", ";");
             case '>':
                 code.next();
-                return new Token("MAIORQUE", ">");
+                if (code.current() == '=') {
+                    code.next();
+                    return new Token("maiorigual", ">=");
+                } else {
+                    return new Token("maiorque", ">");
+                }
             case '<':
                 code.next();
-                return new Token("MENORQUE", "<");
+                if (code.current() == '=') {
+                    code.next();
+                    return new Token("menorigual", "<=");
+                } else {
+                    return new Token("menorque", "<");
+                }
             case '&':
                 code.next();
-                if (code.current() == '&') {
-                    code.current();
-                    return new Token("AND", "&&");
-                }
+                return new Token("and", "&");
             case '|':
                 code.next();
                 if (code.current() == '|') {
                     code.next();
-                    return new Token("OR", "||");
+                    return new Token("or", "||");
                 }
             case '=':
                 code.next();
                 if (code.current() == '=') {
                     code.next();
-                    return new Token("IGUAL", "==");
+                    return new Token("igual", "==");
                 } else {
-                    return new Token("ATRIBUICAO", "=");
+                    return new Token("atribuicao", "=");
                 }
             case '!':
                 code.next();
                 if (code.current() == '=') {
                     code.next();
-                    return new Token("DIFERENTE", "!=");
+                    return new Token("diferente", "!=");
                 }
             default:
                 return null;

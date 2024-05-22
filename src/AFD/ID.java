@@ -12,7 +12,7 @@ public class ID extends AFD {
             String letter = readID(code);
 
             if (endID(code) == true) {
-                return new Token("ID", letter);
+                return new Token("id", letter);
             }
         }
 

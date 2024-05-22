@@ -22,7 +22,7 @@ public class Main {
   public String Arquivo() throws IOException {
     String data = new String(
         Files.readAllBytes(
-            Paths.get("src\\alvaro2\\projeto\\teste.me")),
+            Paths.get("projeto\\teste.me")),
         StandardCharsets.UTF_8);
     return data;
   }

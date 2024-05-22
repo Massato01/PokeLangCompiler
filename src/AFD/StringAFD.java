@@ -8,17 +8,17 @@ import Token.Token;
 public class StringAFD extends AFD {
   @Override
   public Token evaluate(CharacterIterator code) {
-    String stringText = "";
+    String string_value = "";
 
     if (code.current() == '"') {
-      stringText += '"';
+      string_value += '"';
       code.next();
-      stringText += readString(code);
+      string_value += readString(code);
 
       if (endString(code)) {
-        stringText += '"';
+        string_value += '"';
         code.next();
-        return new Token("STRING", stringText);
+        return new Token("string", string_value);
       }
     }
 
@@ -26,14 +26,14 @@ public class StringAFD extends AFD {
   }
 
   private String readString(CharacterIterator code) {
-    String stringText = "";
+    String string_value = "";
 
     while (code.current() != '"' && code.current() != CharacterIterator.DONE) {
-      stringText += code.current();
+      string_value += code.current();
       code.next();
     }
 
-    return stringText;
+    return string_value;
   }
 
   private boolean endString(CharacterIterator code) { // Verifica se finalizou a declaração do ID

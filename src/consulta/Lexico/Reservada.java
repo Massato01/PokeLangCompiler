@@ -3,8 +3,7 @@ package Lexico;
 import java.text.CharacterIterator;
 
 public class Reservada extends AFD {
-	String reservadas[] = { "depende", "planoB", "eOSeuNegocio", "fazDeNovo", "taOk", "gaviao", "caixaPreta", "receba",
-			"olhaSo", "cheeega" };
+	String reservadas[] = { "depende", "planoB", "eOSeuNegocio", "fazDeNovo", "taOk", "gaviao", "caixaPreta", "receba", "olhaSo", "cheeega" };
 
 	@Override
 	public Token evaluate(CharacterIterator code, int linha, int column) {
