@@ -13,8 +13,13 @@ public class Pokecenter {
             parser.evolvingParser.evolving() && 
             parser.identificadorParser.id() &&
             parser.matchLexema("=", "=") &&
-            parser.mathExpressao() &&
-            // parser.mathOperator() &&
+            // parser.mathExpressao() &&
+            parser.mathOperator() &&
+            // (
+            //     parser.mathOperatorAux() ||
+            //     (parser.identificadorParser.id() && parser.mathOperatorAux() && parser.identificadorParser.id()) ||
+            //     parser.pokeballParser.pokeball()
+            // ) &&
             parser.matchLexema(";", ";")
             ) {
             return true;
