@@ -1,8 +1,0 @@
-porygon y = 1;
-
-unown teste = pokeball();
-
-forretress (porygon x = 0; x < 10; x++) {
-    pokedex(nome);
-    pokedex(x);
-}

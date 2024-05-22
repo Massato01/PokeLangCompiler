@@ -1,4 +1,6 @@
-eevee (x > 1) {
-   pokedex("oi");
-   x = 10;
+porygon i = 5;
+
+poliwhirl(i < 10) {
+   pokedex(i);
+   i = i + 1;
 }

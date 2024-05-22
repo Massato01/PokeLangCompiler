@@ -25,7 +25,7 @@
 
 - input -> pokeball
 - print -> pokedex
-- casting -> evolving
+- tipo variavel -> evolving
 - atribuição -> pokecenter
 
 ---
