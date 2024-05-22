@@ -1,6 +1,8 @@
-porygon i = 5;
+porygon number = pokeball();
 
-poliwhirl(i < 10) {
-   pokedex(i);
-   i = i + 1;
+forretress (porygon i = 0; i < 11; i++) {
+    pokedex(i);
+    eevee (i == 10) {
+        pokedex("IF: chegou em 10");
+    }
 }

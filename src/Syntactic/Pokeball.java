@@ -12,14 +12,6 @@ public class Pokeball {
             if (parser.matchLexema("pokeball", "input.nextInt") && parser.matchLexema("(", "(") && parser.matchLexema(")", ")")) {
                 return true;
             }
-        } else if (parser.evolving.equals("squirtle")) {
-            if (parser.matchLexema("pokeball", "input.nextDouble") && parser.matchLexema("(", "(") && parser.matchLexema(")", ")")) {
-                return true;
-            }
-        } else if (parser.evolving.equals("unown")) {
-            if (parser.matchLexema("pokeball", "input.nextLine") && parser.matchLexema("(", "(") && parser.matchLexema(")", ")")) {
-                return true;
-            }
         }
 
         parser.erro("pokeball");

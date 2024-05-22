@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.FileReader;
 
 import Token.Token;
-import Lexer.Lexer;f
+import Lexer.Lexer;
 import Syntactic.Parser;
 
 public class Main {
@@ -45,14 +45,4 @@ public class Main {
         return null;
     }
   }
-
-  // public static void criarArquivo(String nomeArquivo, String conteudo) {
-  //   // Usando BufferedWriter para escrever no arquivo
-  //   try (BufferedWriter escritor = new BufferedWriter(new FileWriter(nomeArquivo))) {
-  //       escritor.write(conteudo);
-  //       System.out.println("Arquivo criado e conteúdo escrito com sucesso!");
-  //   } catch (IOException e) {
-  //       System.err.println("Erro ao escrever no arquivo: " + e.getMessage());
-  //   }
-  // }
 }
