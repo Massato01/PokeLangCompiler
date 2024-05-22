@@ -27,7 +27,7 @@ public class Forretress {
           if (parser.matchTipo("num", parser.token.getLexema())) {
             return true;
           } else {
-            return true; // ε
+            return true;
           }
         }
     

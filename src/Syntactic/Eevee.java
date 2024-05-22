@@ -35,6 +35,6 @@ public class Eevee {
             return false;
         }
 
-        return true; // ε
+        return true;
     }
 }

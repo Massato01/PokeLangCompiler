@@ -15,7 +15,7 @@ public class Condicao {
                     return true;
                 }
             } else {
-                return true; // ε
+                return true;
             }
         }
 
