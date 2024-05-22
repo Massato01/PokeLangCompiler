@@ -1,3 +1,4 @@
 eevee (x > 1) {
    pokedex("oi");
+   x = 10;
 }
