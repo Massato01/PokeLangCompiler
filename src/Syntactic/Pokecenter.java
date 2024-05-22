@@ -11,7 +11,11 @@ public class Pokecenter {
         // porygon x = 1;
         if (
             parser.evolvingParser.evolving() && 
-            parser.identificadorParser.id() && parser.matchLexema("=", "=") && parser.mathExpressao() && parser.matchLexema(";", ";")
+            parser.identificadorParser.id() &&
+            parser.matchLexema("=", "=") &&
+            parser.mathExpressao() &&
+            // parser.mathOperator() &&
+            parser.matchLexema(";", ";")
             ) {
             return true;
         }

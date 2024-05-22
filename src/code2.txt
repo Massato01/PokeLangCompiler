@@ -5,3 +5,4 @@ porygon soma = x + y;
 porygon subt = y - x;
 porygon mult = x * y;
 squirtle divi = y / x;
+pokedex(10 + 10);
