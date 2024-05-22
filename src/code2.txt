@@ -1,6 +1,8 @@
-porygon x = 2;
-porygon y = 4;
+porygon y = 1;
 
-porygon soma = x + y;
-x++;
-pokedex(soma);
+unown teste = pokeball();
+
+forretress (porygon x = 0; x < 10; x++) {
+    pokedex(nome);
+    pokedex(x);
+}

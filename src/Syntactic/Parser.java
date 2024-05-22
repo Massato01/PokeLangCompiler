@@ -20,6 +20,7 @@ public class Parser {
   public Comentario comentarioParser; // GLC Comentario
   public Pokeball pokeballParser; // GLC Pokeball
   public Pokecenter pokecenterParser; // GLC Pokecenter
+  public MathOperator mathOperatorParser; // GLC MathOperator
 
   public Parser(List<Token> tokens) {
     this.tokens = tokens;
@@ -34,6 +35,7 @@ public class Parser {
     this.evolvingParser = new Evolving(this);
     this.pokeballParser = new Pokeball(this);
     this.pokecenterParser = new Pokecenter(this);
+    this.mathOperatorParser = new MathOperator(this);
   }
   
   public void main() {
@@ -44,7 +46,7 @@ public class Parser {
       if (matchTipo("EOF", "")) {
         System.out.print("\n}}");
       } else {
-        erro("MAIN");
+        erro("main");
       }
     }
   }
@@ -93,7 +95,7 @@ public class Parser {
       token.getTipo().equals("mul") ||
       token.getTipo().equals("div")
       ) {
-        if (mathOperator()) {
+        if (mathOperatorParser.mathOperator()) {
           parseToken();
           return true;
         }
@@ -102,49 +104,6 @@ public class Parser {
     }
 
     return false;
-  }
-
-  public boolean mathOperator() {
-    if (mathOperatorAux() && mathOperatorArithmetic()) {
-      return true;
-    }
-
-    erro("mathOperator");
-    return false;
-  }
-
-  public boolean mathOperatorAux() {
-    if (
-      matchTipo("id", token.getLexema()) ||
-      matchTipo("num", token.getLexema()) ||
-      matchTipo("flutuante", token.getLexema()) ||
-      matchTipo("string", token.getLexema()) ||
-      (matchLexema("(", "(") && mathOperator() && matchLexema(")", ")"))
-      ) {
-      return true;
-    }
-
-    erro("mathOperatorAux");
-    return false;
-  }
-
-  public boolean mathOperatorArithmetic() {
-    if (
-      matchLexema("*", "*") ||
-      matchLexema("/", "/") ||
-      matchLexema("+", "+") ||
-      matchLexema("-", "-") ||
-      matchLexema("++", "++") ||
-      matchLexema("--", "--")
-      ) {
-      if (mathOperatorAux() && mathOperatorArithmetic()) {
-        return true;
-      }
-      erro("mathOperatorArithmetic");
-      return false;
-    }
-
-    return true;
   }
   
   // -------------------- MATCH TOKENS --------------------

@@ -34,35 +34,25 @@ public class Main {
     Parser parser = new Parser(tokens);
     parser.main();
   }
-
-  public String CodeTeste() {
-    StringBuilder codeBuilder = new StringBuilder();
-    File arquivo = new File("src\\code2.txt");
-
-    try {
-        FileReader leitor = new FileReader(arquivo);
-        BufferedReader buffer = new BufferedReader(leitor);
-
-        String linha;
-        while ((linha = buffer.readLine()) != null) {
-            codeBuilder.append(linha).append("\n");
-        }
-
-        buffer.close();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-
-    return codeBuilder.toString();
-  }
   
+  // LEITURA DE ARQUIVO DE ENTRADA
   public String Code() {
     try {
-        String code = new String(Files.readAllBytes(Paths.get("src\\code2.txt")), StandardCharsets.UTF_8);
+        String code = new String(Files.readAllBytes(Paths.get("src\\code.txt")), StandardCharsets.UTF_8);
         return code;
     } catch (IOException e) {
         e.printStackTrace();
         return null;
     }
   }
+
+  // public static void criarArquivo(String nomeArquivo, String conteudo) {
+  //   // Usando BufferedWriter para escrever no arquivo
+  //   try (BufferedWriter escritor = new BufferedWriter(new FileWriter(nomeArquivo))) {
+  //       escritor.write(conteudo);
+  //       System.out.println("Arquivo criado e conteúdo escrito com sucesso!");
+  //   } catch (IOException e) {
+  //       System.err.println("Erro ao escrever no arquivo: " + e.getMessage());
+  //   }
+  // }
 }
