@@ -1,9 +1,3 @@
-porygon y = 1;
-
-pokedex("Digite o seu nome:");
-unown nome = pokeball();
-
-forretress (porygon x = 0; x < 10; x++) {
-    pokedex(nome);
-    pokedex(x);
+eevee (x > 1) {
+    x++;
 }

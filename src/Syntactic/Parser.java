@@ -77,6 +77,9 @@ public class Parser {
     } else if (token.getTipo().equals("comentario") && comentarioParser.comentario()) {
         parseToken();
         return true;
+    } else if (token.getTipo().equals("id") && identificadorParser.id()) {
+        parseToken();
+        return true;
     } else if (token.getLexema().equals("eevee") && eeveeParser.eevee()) {
         parseToken();
         return true;
