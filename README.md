@@ -107,12 +107,31 @@ pokedex ( argumento ) ";"
 ### Exemplo de código:
 
 ```
+pokedex("Valor:");
 porygon number = pokeball();
 
-forretress (porygon i = 0; i < 11; i++) {
+forretress (porygon i = 0; i < number; i++) {
     pokedex(i);
-    eevee (i == 10) {
-        pokedex("IF: chegou em 10");
+    eevee (i == 5) {
+        pokedex("IF: chegou em 5");
+    } espeon {
+        eevee (i == 10) {
+            pokedex("IF com ELSE: chegou em 10");
+        }
     }
+}
+
+pokedex("Valor 1:");
+porygon inputum = pokeball();
+
+pokedex("Valor 2:");
+porygon inputdois = pokeball();
+
+eevee (inputum > inputdois) {
+    pokedex("Maior:");
+    pokedex(inputum);
+} espeon {
+    pokedex("Maior:");
+    pokedex(inputdois);
 }
 ```
