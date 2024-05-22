@@ -21,6 +21,7 @@ public class Parser {
   public Pokeball pokeballParser; // GLC Pokeball
   public Pokecenter pokecenterParser; // GLC Pokecenter
   public MathOperator mathOperatorParser; // GLC MathOperator
+  public Number numberParser; // GLC Number
 
   public Parser(List<Token> tokens) {
     this.tokens = tokens;
@@ -36,6 +37,7 @@ public class Parser {
     this.pokeballParser = new Pokeball(this);
     this.pokecenterParser = new Pokecenter(this);
     this.mathOperatorParser = new MathOperator(this);
+    this.numberParser = new Number(this);
   }
   
   public void main() {
