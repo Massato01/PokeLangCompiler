@@ -32,7 +32,7 @@ public class Main {
         System.out.println("=== Gerando codigo traduzido para JAVA em src/Validacao/PokeMainTraduzido.java ... ===\n");
 
         // Cria o diretório "Validacao" se não existir
-        File dir = new File("Validacao");
+        File dir = new File("src/Validacao");
         if (!dir.exists()) {
             dir.mkdirs();
         }
