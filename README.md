@@ -2,15 +2,19 @@
 
 - int -> porygon
 - double -> squirtle
+- ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/6ae63308-a719-425c-a729-0ac98bd177d0)
 - string -> unown
+- ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/4bd9a4c0-0f3b-431f-99a0-9661827a8d39)
+
 
 ---
 
 ## Condição:
 
 - if -> eevee
-- elif -> leafeon
+- ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/5d25cc53-2621-4a1a-b4b2-293d1c99f4c1)
 - else -> espeon
+- ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/1507bd1b-5070-4a9a-b9ab-dae89fc7427c)
 
 ---
 
