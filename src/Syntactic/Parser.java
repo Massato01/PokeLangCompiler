@@ -56,7 +56,7 @@ public class Parser {
   }
 
   public void erro(String regra) {
-    System.out.println("\n\nErro na regra: " + regra);
+    System.out.println("\n\nERRO NO ANALISADOR SINTATICO\nErro na regra: " + regra);
     System.out.println("Token inválido: " + token);
     System.out.println("token invalido: " + token.getLexema());
     System.exit(0);
@@ -113,7 +113,7 @@ public class Parser {
           parseToken();
           return true;
         }
-        
+
     } else {
         return true;
     }

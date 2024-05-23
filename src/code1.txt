@@ -1,0 +1,55 @@
+// Codigo forretress
+pokedex("FORRETRESS(for)");
+pokedex("Valor:");
+porygon number = pokeball();
+
+forretress (porygon i = 0; i < number; i++) {
+    pokedex(i);
+    eevee (i == 5) {
+        pokedex("IF: chegou em 5");
+    } espeon {
+        eevee (i == 10) {
+            pokedex("IF com ELSE: chegou em 10");
+        }
+    }
+}
+
+// Codigo eevee
+pokedex("EEVEE(if)");
+pokedex("Valor 1:");
+porygon inputum = pokeball();
+
+pokedex("Valor 2:");
+porygon inputdois = pokeball();
+
+eevee (inputum > inputdois) {
+    pokedex("Maior:");
+    pokedex(inputum);
+} espeon {
+    pokedex("Maior:");
+    pokedex(inputdois);
+}
+
+// Codigo operadores
+pokedex("OPERADORES");
+pokedex("Valor 1:");
+porygon numum = pokeball();
+
+pokedex("Valor 2:");
+porygon numdois = pokeball();
+
+porygon somatotal = numum + numdois;
+pokedex("SOMA");
+pokedex(somatotal);
+
+porygon subtotal = numum - numdois;
+pokedex("SUBTRACAO");
+pokedex(subtotal);
+
+squirtle divtotal = numum / numdois;
+pokedex("DIVISAO");
+pokedex(divtotal);
+
+squirtle multotal = numum * numdois;
+pokedex("MULTIPLICACAO");
+pokedex(multotal);

@@ -1,0 +1,5 @@
+porygon i = 0;
+poliwhirl (i < 10) {
+    pokedex(i);
+    i++;
+}

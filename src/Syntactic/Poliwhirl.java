@@ -9,10 +9,15 @@ public class Poliwhirl {
 
     public boolean poliwhirl() {
         if (
-            parser.matchLexema("poliwhirl", "while") && parser.matchLexema("(", "(") && parser.condicaoParser.condicao() && parser.matchLexema(")", ")") &&
+            parser.matchLexema("poliwhirl", "while") && parser.matchLexema("(", "(") &&
+            parser.condicaoParser.condicao() &&
+            parser.matchLexema(")", ")") &&
             parser.matchLexema("{", "{") &&
             parser.parseToken() &&
-            parser.matchLexema("}", "}")
+            (
+                parser.matchLexema("}", "}") ||
+                (parser.operadorParser.operador() && parser.matchLexema(";", ";") && parser.matchLexema("}", "}"))
+            ) || parser.parseToken()
             ) {
             return true;
         }

@@ -6,5 +6,5 @@ public class PokeMainTraduzido {
 public static void main(String[] args) {
 Scanner input = new Scanner(System.in);
 
-for ( int  i = 40 ; i < 51 ; i ++ ) { System.out.println ( i ) ; }  
+System.out.println ( "Hello World" ) ;  
 }}

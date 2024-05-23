@@ -8,7 +8,7 @@ public class MathOperator {
     }
 
     public boolean mathOperator() {
-        if (mathOperatorAux() && mathOperatorArithmetic() || parser.pokeballParser.pokeball()) {
+        if ((mathOperatorAux() && mathOperatorArithmetic()) || parser.pokeballParser.pokeball()) {
             return true;
         }
 
