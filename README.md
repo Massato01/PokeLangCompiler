@@ -1,8 +1,10 @@
-# Projeto de Compiladores PokeLang
-## O PokeLangCompiler é um projeto de compiladores de linguagem de programação inspirado no mundo dos Pokémon. Ele permite que os desenvolvedores escrevam código em uma linguagem de programação fictícia baseada em nomes e conceitos relacionados a Pokémon. O Compilador foi desenvolvido em Java, assim como a tradução do código é feita na linguagem Java. Vamos dar uma olhada nos principais aspectos do projeto:
+# Projeto de Compiladores 
+## PokeLang
+### O PokeLangCompiler é um projeto de compiladores de linguagem de programação inspirado no mundo dos Pokémon. Ele permite que os desenvolvedores escrevam código em uma linguagem de programação fictícia baseada em nomes e conceitos relacionados a Pokémon. O Compilador foi desenvolvido em Java, assim como a tradução do código é feita na linguagem Java. Vamos dar uma olhada nos principais aspectos do projeto:
 
 
 # Tipos:
+## O compilador suporta três tipos de dados principais, cada um associado a um Pokémon específico:
 
 ## int -> porygon
   ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/974b2b4f-210d-4748-ad78-cb4caa22ed31)
