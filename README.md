@@ -1,10 +1,11 @@
 ## Tipos:
 
 - int -> porygon
+  ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/974b2b4f-210d-4748-ad78-cb4caa22ed31)
 - double -> squirtle
-- ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/6ae63308-a719-425c-a729-0ac98bd177d0)
+ ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/6ae63308-a719-425c-a729-0ac98bd177d0)
 - string -> unown
-- ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/4bd9a4c0-0f3b-431f-99a0-9661827a8d39)
+ ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/4bd9a4c0-0f3b-431f-99a0-9661827a8d39)
 
 
 ---
@@ -12,23 +13,28 @@
 ## Condição:
 
 - if -> eevee
-- ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/5d25cc53-2621-4a1a-b4b2-293d1c99f4c1)
+ ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/5d25cc53-2621-4a1a-b4b2-293d1c99f4c1)
 - else -> espeon
-- ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/1507bd1b-5070-4a9a-b9ab-dae89fc7427c)
+ ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/1507bd1b-5070-4a9a-b9ab-dae89fc7427c)
 
 ---
 
 ## Loop:
 
 - for -> forretress
+ ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/d51421a2-c479-4c9d-9c32-168430fc0c28)
 - while -> poliwhirl
+  ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/7dfa5e06-6f2e-4281-84c4-00a6e54f17f3)
 
 ---
 
 ## Atribuição:
 
 - input -> pokeball
+  ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/b61b2e12-dbd1-48e1-a861-b9c629defd26)
 - print -> pokedex
+  ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/3dfd2c46-50d6-474c-ab4c-46a45e07831f)
+
 - tipo variavel -> evolving
 - atribuição -> pokecenter
 
