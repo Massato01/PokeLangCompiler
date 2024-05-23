@@ -17,13 +17,13 @@ public class Main {
         String path = "src\\code.txt";
         String codigoFonte = new Main().Code(path);
 
-        Lexer lexer = new Lexer(codigoFonte);
-        tokens = lexer.getTokens();
-
         System.out.print("=== Codigo de entrada: === \n" + codigoFonte);
-        
+
         // LEXICO
         System.out.println("\n\n=== Analisando Tokens... ===");
+        Lexer lexer = new Lexer(codigoFonte);
+        tokens = lexer.getTokens();
+        
         for (Token token : tokens) {
             System.out.println(token);
         }

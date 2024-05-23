@@ -1,4 +1,4 @@
-// Codigo forretress(for)
+// Codigo forretress
 pokedex("FORRETRESS(for)");
 pokedex("Valor:");
 porygon number = pokeball();
@@ -14,7 +14,7 @@ forretress (porygon i = 0; i < number; i++) {
     }
 }
 
-// Codigo eevee(if)
+// Codigo eevee
 pokedex("EEVEE(if)");
 pokedex("Valor 1:");
 porygon inputum = pokeball();
