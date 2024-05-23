@@ -113,7 +113,6 @@ numero -> [0-9]
 
 argumento -> id | numero
 
-tipo ->
 
 ---
 
@@ -149,11 +148,11 @@ poliwhirl ( condicao ) { expressao }
 
 ```
 
-- INPUT (ACHO MELHOR TIRAR)
+- INPUT
 
 ```
 
-pokeball ( tipo )
+pokeball ( argumento ) ";"
 
 ```
 
