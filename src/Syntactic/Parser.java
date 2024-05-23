@@ -43,7 +43,7 @@ public class Parser {
   }
   
   public void main() {
-    System.out.println("// POKELANG -> JAVA\nimport java.util.Scanner;\n\npublic class Main {\npublic static void main(String[] args) {\nScanner input = new Scanner(System.in);\n");
+    System.out.println("// POKELANG -> JAVA\nimport java.util.Scanner;\n\npublic class PokeMainTraduzido {\npublic static void main(String[] args) {\nScanner input = new Scanner(System.in);\n");
     token = nextToken();
 
     if (parseToken()) {

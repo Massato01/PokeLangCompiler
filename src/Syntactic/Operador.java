@@ -14,9 +14,6 @@ public class Operador {
             parser.matchLexema("==", "==") || parser.matchLexema("!=", "!=") ||
             parser.matchLexema("||", "||") || parser.matchLexema("&", "&&") ||
             parser.matchLexema("--", "--") || parser.matchLexema("++", "++")
-            // parser.matchLexema("+", "+") || parser.matchLexema("-", "-") ||
-            // parser.matchLexema("*", "*") || parser.matchLexema("/", "/") ||
-            // parser.matchLexema("=", "=")
             ) {
             return true;
         }
