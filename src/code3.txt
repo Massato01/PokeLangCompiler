@@ -1,0 +1,3 @@
+forretress(porygon i = 40; i < 51; i++) {
+    pokedex(i);
+}

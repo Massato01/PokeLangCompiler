@@ -14,7 +14,7 @@ import Syntactic.Parser;
 public class Main {
     public static void main(String[] args) {
         List<Token> tokens = null;
-        String path = "src\\code.txt";
+        String path = "src\\code3.txt";
         String codigoFonte = new Main().Code(path);
 
         System.out.print("=== Codigo de entrada: === \n" + codigoFonte);

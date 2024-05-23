@@ -1,0 +1,22 @@
+pokedex("Maior numero entre 3 valores");
+pokedex("Valor 1:");
+porygon inputum = pokeball();
+
+pokedex("Valor 2:");
+porygon inputdois = pokeball();
+
+pokedex("Valor 3:");
+porygon inputtres = pokeball();
+
+eevee (inputum > inputdois & inputum > inputtres) {
+    pokedex("Maior valor:");
+    pokedex(inputum);
+}
+eevee (inputdois > inputum & inputdois > inputtres) {
+    pokedex("Maior valor:");
+    pokedex(inputdois);   
+}
+eevee (inputtres > inputum & inputtres > inputdois) {
+    pokedex("Maior valor:");
+    pokedex(inputtres);   
+}

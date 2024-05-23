@@ -48,7 +48,7 @@ public class Parser {
 
     if (parseToken()) {
       if (matchTipo("EOF", "")) {
-        System.out.print("\n}}");        
+        System.out.print("\n}}");
       } else {
         erro("main");
       }
@@ -78,24 +78,31 @@ public class Parser {
           parseToken();
           return true;
         }
+
     } else if (token.getTipo().equals("comentario") && comentarioParser.comentario()) {
         parseToken();
         return true;
+
     } else if (token.getTipo().equals("id") && identificadorParser.id()) {
         parseToken();
         return true;
+
     } else if (token.getLexema().equals("eevee") && eeveeParser.eevee()) {
         parseToken();
         return true;
+
     } else if (token.getLexema().equals("forretress") && forretressParser.forretress()) {
         parseToken();
         return true;
+        
     } else if (token.getLexema().equals("poliwhirl") && poliwhirlParser.poliwhirl()) {
         parseToken();
         return true;
+
     } else if (token.getLexema().equals("pokedex") && pokedexParser.pokedex()) {
         parseToken();
         return true;
+
     } else if (
       token.getTipo().equals("soma") ||
       token.getTipo().equals("sub") ||
@@ -106,6 +113,7 @@ public class Parser {
           parseToken();
           return true;
         }
+        
     } else {
         return true;
     }
