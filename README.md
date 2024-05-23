@@ -87,13 +87,13 @@
 
 # Atribuição e Variáveis:
 
-## tipo variavel (definir variável) ->
+## tipo variavel (definir variável)
 
 ### Evolving: Declara uma variável com um tipo específico.
 
 ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/12d15fd9-54c2-4df4-99bc-d0cd72e9f7d8)
 
-## atribuição (atribuir) -> Pokecenter:
+## atribuição (atribuição) -> Pokecenter:
 
 ### Atribui um valor a uma variável.
 
