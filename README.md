@@ -36,13 +36,13 @@ condicao -> id operador id | id operador num
 
 expressao -> id "=" id | id "=" num
 
-operador -> "=" | "!=" | ">" | "<"
+operador -> "=" | "!=" | ">" | "<" | "+" | "-" | "*" | "/"
 
 numero -> [0-9]
 
 argumento -> id | numero
 
-tipo ->
+tipo -> 
 
 ---
 
@@ -51,14 +51,6 @@ tipo ->
 ```
 
 eevee ( condicao ) { expressao }
-
-```
-
-- ELIF
-
-```
-
-leafeon ( condicao ) { expressao }
 
 ```
 
@@ -74,7 +66,7 @@ espeon { expressao }
 
 ```
 
-forretress ( expressao ";" condicao ) { expressao }
+forretress ( contador ";" condição ";" incremento ) { expressao }
 
 ```
 
@@ -86,11 +78,11 @@ poliwhirl ( condicao ) { expressao }
 
 ```
 
-- INPUT
+- INPUT (ACHO MELHOR TIRAR)
 
 ```
 
-pokeball ( tipo );
+pokeball ( tipo )
 
 ```
 
