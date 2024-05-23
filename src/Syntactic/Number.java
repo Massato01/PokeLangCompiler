@@ -9,7 +9,8 @@ public class Number {
 
     public boolean number() {
         if (
-            parser.matchTipo("num", parser.token.getLexema())
+            parser.matchTipo("num", parser.token.getLexema()) ||
+            parser.matchTipo("flutuante", parser.token.getLexema())
             ) {
             return true;
         }

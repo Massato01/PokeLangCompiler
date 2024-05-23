@@ -9,21 +9,14 @@ public class Operador {
 
     public boolean operador() {
         if (
-            parser.matchLexema("<", "<") ||
-            parser.matchLexema(">", ">") ||
-            parser.matchLexema("<=", "<=") ||
-            parser.matchLexema(">=", ">=") ||
-            parser.matchLexema("==", "==") || 
-            parser.matchLexema("!=", "!=") ||
-            parser.matchLexema("||", "||") ||
-            parser.matchLexema("&", "&&") ||
-            parser.matchLexema("--", "--") ||
-            parser.matchLexema("++", "++") ||
-            parser.matchLexema("+", "+") ||
-            parser.matchLexema("-", "-") ||
-            parser.matchLexema("*", "*") ||
-            parser.matchLexema("/", "/") ||
-            parser.matchLexema("=", "=")
+            parser.matchLexema("<", "<") || parser.matchLexema(">", ">") ||
+            parser.matchLexema("<=", "<=") || parser.matchLexema(">=", ">=") ||
+            parser.matchLexema("==", "==") || parser.matchLexema("!=", "!=") ||
+            parser.matchLexema("||", "||") || parser.matchLexema("&", "&&") ||
+            parser.matchLexema("--", "--") || parser.matchLexema("++", "++")
+            // parser.matchLexema("+", "+") || parser.matchLexema("-", "-") ||
+            // parser.matchLexema("*", "*") || parser.matchLexema("/", "/") ||
+            // parser.matchLexema("=", "=")
             ) {
             return true;
         }

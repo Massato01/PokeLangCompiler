@@ -8,13 +8,10 @@ public class Pokeball {
     }
 
     public boolean pokeball() {
-        if (parser.evolving.equals("porygon")) {
-            if (parser.matchLexema("pokeball", "input.nextInt") && parser.matchLexema("(", "(") && parser.matchLexema(")", ")")) {
+        if (parser.matchLexema("pokeball", "input.nextInt") && parser.matchLexema("(", "(") && parser.matchLexema(")", ")")) {
                 return true;
             }
-        }
-
-        parser.erro("pokeball");
-        return false;
+            parser.erro("pokeball");
+            return false;
     }
 }

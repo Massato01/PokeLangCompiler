@@ -48,9 +48,7 @@ public class Parser {
 
     if (parseToken()) {
       if (matchTipo("EOF", "")) {
-        System.out.print("\n}}");
-        
-        
+        System.out.print("\n}}");        
       } else {
         erro("main");
       }
@@ -115,7 +113,7 @@ public class Parser {
     return false;
   }
   
-  // -------------------- MATCH TOKENS --------------------
+  // MATCH TOKENS
   public boolean matchLexema(String lexema, String newCode) {
     if (token.getLexema().equals(lexema)) {
       traduz(newCode);
@@ -136,7 +134,7 @@ public class Parser {
     return false;
   }
 
-  // -------------------- TRADUÇÃO --------------------
+  // TRADUCAO
   public void traduz(String code) {
     System.out.print(code + " ");
   }
