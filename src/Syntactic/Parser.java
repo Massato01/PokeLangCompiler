@@ -7,6 +7,8 @@ public class Parser {
   List<Token> tokens;
   Token token;
 
+  public String codeOutput = ""; // Para o codigo traduzido
+
   public String evolving = ""; // Para o INPUT(pokeball)
   
   public Evolving evolvingParser; // GLC Evolving
@@ -47,6 +49,8 @@ public class Parser {
     if (parseToken()) {
       if (matchTipo("EOF", "")) {
         System.out.print("\n}}");
+        
+        
       } else {
         erro("main");
       }

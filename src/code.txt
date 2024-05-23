@@ -1,3 +1,4 @@
+// Codigo forretress(for)
 pokedex("Valor:");
 porygon number = pokeball();
 
@@ -12,6 +13,7 @@ forretress (porygon i = 0; i < number; i++) {
     }
 }
 
+// Codigo eevee(if)
 pokedex("Valor 1:");
 porygon inputum = pokeball();
 
