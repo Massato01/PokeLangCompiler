@@ -24,6 +24,8 @@
 
 # Condição:
 
+#### O PokeLangCompiler oferece estruturas de controle familiares, mas com nomes temáticos:
+
 ## if -> eevee
 
 ![image](https://github.com/Massato01/PokeLangCompiler/assets/106417053/5d25cc53-2621-4a1a-b4b2-293d1c99f4c1)
@@ -35,6 +37,8 @@
 ---
 
 # Loop:
+
+#### Os loops permitem que o código seja executado repetidamente. No PokeLangCompiler, temos:
 
 ## for -> forretress
 
