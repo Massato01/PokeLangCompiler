@@ -29,7 +29,7 @@ public class Main {
         }
         System.out.println("=== Tokens Analisados ===\n");
 
-        System.out.println("=== Gerando codigo traduzido para JAVA... ===\n");
+        System.out.println("=== Gerando codigo traduzido para JAVA em Validacao/PokeMainTraduzido.java ... ===\n");
 
         // Cria o diretório "Validacao" se não existir
         File dir = new File("Validacao");
@@ -38,13 +38,13 @@ public class Main {
         }
 
         // Define o arquivo para onde a saída do parser será redirecionada
-        File file = new File("Validacao/Main.java");
+        File file = new File("Validacao/PokeMainTraduzido.java");
 
         try {
             // Cria um PrintStream que irá escrever no arquivo
             PrintStream printStream = new PrintStream(file);
             
-            // Redireciona a saída padrão (System.out) para o arquivo Validacao/Main.java
+            // Redireciona a saída padrão (System.out) para o arquivo Validacao/PokeMainTraduzido.java
             System.setOut(printStream);
 
             // SINTATICO
